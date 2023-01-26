@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
 import { AiOutlineClose } from "react-icons/ai"
 import { Logo } from "../components"
-const Sidebar = ({ closeSidebar }) => {
+import { useProductsContext } from "../context/products_context"
+
+const Sidebar = () => {
+  const { closeSidebar } = useProductsContext()
   return (
     <header className=" fixed  h-screen z-30 top-0 right-0 left-0   w-full bg-black md:hidden overflow-hidden px-5 text-white space-y-5 ">
       <div className=" py-4 flex justify-between items-center ">
-        {/* <h1>Shoptik</h1> */}
         <Logo className="text-white" />
         <button className=" " onClick={closeSidebar}>
           <AiOutlineClose className="w-7 h-7" />

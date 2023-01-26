@@ -1,20 +1,14 @@
-import React from 'react'
-import { useState } from "react"
+import React from "react"
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { BsHandbag } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Sidebar, Logo } from "../components"
-const Navbar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+import { useProductsContext } from "../context/products_context"
 
-  const openSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
-  }
-  const closeSidebar = () => {
-    setIsSidebarOpen(false)
-  }
+const Navbar = () => {
+  const { openSidebar, isSidebarOpen } = useProductsContext()
 
   return (
     <>
@@ -24,14 +18,6 @@ const Navbar = () => {
 
           {/* Logo */}
           <Logo />
-          {/* <Link
-            to="/"
-            className="relative flex  pr-3 text-2xl font-bold  tracking-wider md:text-3xl"
-          >
-            Shoptik
-            <span className="absolute right-[6px] bottom-2 h-[6px] w-[6px] bg-green-400 "></span>
-          </Link> */}
-
           {/* Menu items */}
           <div className="hidden space-x-10 uppercase md:flex">
             {navLinks.map((menu) => {
@@ -70,14 +56,13 @@ const Navbar = () => {
 
           {/* Sidebar menu */}
           <div className=" md:hidden ">
-            <button className="" onClick={openSidebar}>
+            <button onClick={openSidebar}>
               <AiOutlineMenu className="h-7 w-7" />
             </button>
           </div>
         </div>
       </nav>
-      {isSidebarOpen ? <Sidebar closeSidebar={closeSidebar} /> : null}
-      {/* Header content */}
+      {isSidebarOpen ? <Sidebar /> : null}
     </>
   )
 }
