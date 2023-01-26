@@ -1,7 +1,12 @@
 import React from "react"
-
+import { Breadcrumb } from "../components"
 const Products = () => {
-  return <div>Products</div>
+  return (
+    <>
+      <Breadcrumb />
+      <div className="">Products</div>
+    </>
+  )
 }
 
 export default Products
