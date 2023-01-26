@@ -1,31 +1,21 @@
-import Navbar from './components/Navbar'
-import HomeProduct from './components/HomeProduct'
-import Footer from './components/Footer'
-import ProductCategory from './components/ProductCategory'
-import Instagram from './components/Instagram'
-import ProductGrid from './components/ProductGrid'
-import Basket from './components/Basket'
-import Header from './components/Header'
-import ProductsHome from './components/ProductsHome'
-import SingleProduct from './components/SingleProduct'
-import Cart from './components/Cart'
-
+import { Navbar, Footer } from "./components"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Home, Cart, Products, SingleProduct, Error } from "./pages"
 
 function App() {
   return (
-    <>
-    <Navbar/>
-    {/* <Cart/> */}
-    {/* <ProductsHome/> */}
-    {/* <SingleProduct/> */}
-    <Header/>
-    <HomeProduct/>
-    <Basket/>
-    <ProductGrid/>
-    <ProductCategory/>
-    <Instagram/>
-    <Footer/>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop" element={<Products />} />
+        <Route path="/shop/:id" element={<SingleProduct />} />
+        {/* TODO: Add checkout page here */}
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
