@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-100 py-4 xl:py-8 top-0 right-0 left-0 fixed  ">
+      <nav className="bg-gray-100 py-4 xl:py-8">
         <div className="container mx-auto flex h-full items-center justify-between px-5 xl:max-w-screen-xl  xl:px-28">
           {/* max-w-3xl */}
 
