@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { useProductsContext } from "../context/products_context"
 import { formatPrice } from "../utils/helper"
-
+import { Loading, Error } from "../components"
 const HomeProduct = () => {
   const { products_loading, products_error, products } = useProductsContext()
+  if (products_loading) return <Loading />
+  if (products_error) return <Error />
   return (
     <>
       <section className="my-24">
@@ -34,19 +37,21 @@ const HomeProduct = () => {
             {products.slice(0, 8).map((product) => {
               const { id, image, name, price } = product
               return (
-                <article key={id} className=" space-y-4 ">
-                  <div className="bg-gray-100 ">
-                    <img
-                      src={image}
-                      alt={name}
-                      className="h-44 xl:h-80 object-cover object-center mix-blend-darken  p-8 "
-                    />
-                  </div>
-                  <div>
-                    <p className="text-gray-500 capitalize "> {name}</p>
-                    <p className="font-semibold"> {formatPrice(price)} </p>
-                  </div>
-                </article>
+                <Link to={`/shop/${id}`} key={id}>
+                  <article className=" space-y-4 ">
+                    <div className="bg-gray-100 ">
+                      <img
+                        src={image}
+                        alt={name}
+                        className="h-44 xl:h-80 object-cover object-center mix-blend-darken  p-8 "
+                      />
+                    </div>
+                    <div>
+                      <p className="text-gray-500 capitalize "> {name}</p>
+                      <p className="font-semibold"> {formatPrice(price)} </p>
+                    </div>
+                  </article>
+                </Link>
               )
             })}
           </div>
@@ -54,9 +59,12 @@ const HomeProduct = () => {
           {/* Button */}
           <div className="my-10 flex flex-row justify-between items-center space-x-4">
             <div className=" border-b bg-gray-600 w-2/3 xl:w-2/5"></div>
-            <button className="uppercase tracking-wider border border-green-500  xl:px-10 py-3 text-gray-700 font-medium text-sm xl:text-base w-full md:w-1/2 xl:w-1/5">
+            <Link
+              to="/shop"
+              className=" text-center uppercase tracking-wider border border-green-500 py-3 text-gray-700 font-medium text-sm xl:text-base w-full md:w-1/2 xl:w-1/6"
+            >
               Go to shop
-            </button>
+            </Link>
             <div className=" border-b bg-gray-600 w-2/3 xl:w-2/5"></div>
           </div>
         </div>

@@ -16,8 +16,12 @@ import AllProducts from "./AllProducts"
 import Filters from "./Filters"
 import Loading from "./Loading"
 import Error from "./Error"
+import SingleProduct from "./SingleProduct"
+import ProductImages from "./ProductImages"
 
 export {
+  ProductImages,
+  SingleProduct,
   Error,
   Loading,
   Filters,
