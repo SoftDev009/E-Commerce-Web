@@ -10,7 +10,20 @@ import Instagram from "./Instagram"
 import ProductCategory from "./ProductCategory"
 import ProductsHome from "./ProductsHome"
 import ProductGrid from "./ProductGrid"
+import CollectionProducts from "./CollectionProducts"
+import CategoryProducts from "./CategoryProducts"
+import AllProducts from "./AllProducts"
+import Filters from "./Filters"
+import Loading from "./Loading"
+import Error from "./Error"
+
 export {
+  Error,
+  Loading,
+  Filters,
+  AllProducts,
+  CategoryProducts,
+  CollectionProducts,
   ProductGrid,
   Instagram,
   ProductCategory,

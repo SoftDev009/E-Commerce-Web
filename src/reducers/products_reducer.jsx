@@ -6,6 +6,7 @@ import {
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR,
 } from "../actions"
+import products from "../data"
 
 const products_reducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {
@@ -21,11 +22,19 @@ const products_reducer = (state, action) => {
     const allFeaturedProducts = action.payload.filter(
       (product) => product.featured === true
     )
+    const allNewArrivalProducts = action.payload.filter(
+      (product) => product.new_arrival === true
+    )
+    const allBestSeller_products = action.payload.filter(
+      (product) => product.bestseller === true
+    )
     return {
       ...state,
       products_loading: false,
       products: action.payload,
-      featured_product: allFeaturedProducts,
+      featured_products: allFeaturedProducts,
+      newArrival_products: allNewArrivalProducts,
+      bestSeller_products: allBestSeller_products,
     }
   }
   if (action.type === GET_PRODUCTS_ERROR) {

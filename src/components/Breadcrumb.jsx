@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 
 const Breadcrumb = ({ title }) => {
   return (
-    <div className=" my-4 text-center bg-gray-200 py-2 text-xl font-bold ">
-      <h3>
-        <Link to="/"> Home </Link> / {title}
-      </h3>
-    </div>
+    <>
+      <section className="bg-gray-100 my-10 font-light  ">
+        <div className=" container mx-auto px-5 xl:px-28 py-2 text-xl capitalize ">
+          <Link to="/"> Home </Link> / {title}
+        </div>
+      </section>
+    </>
   )
 }
 

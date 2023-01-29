@@ -1,7 +1,9 @@
 import React from 'react'
-import products from '../data'
-import { formatPrice } from '../utils/helper'
+import { useProductsContext } from "../context/products_context"
+import { formatPrice } from "../utils/helper"
+
 const HomeProduct = () => {
+  const { products_loading, products_error, products } = useProductsContext()
   return (
     <>
       <section className="my-24">
@@ -29,15 +31,17 @@ const HomeProduct = () => {
 
         <div className="container mx-auto px-5 xl:px-28 mt-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {products.slice(15, 23).map((product) => {
+            {products.slice(0, 8).map((product) => {
               const { id, image, name, price } = product
               return (
-                <article key={id} className=" space-y-4">
-                  <img
-                    src={image}
-                    alt=""
-                    className=" w-full h-44 xl:h-96 object-cover object-center"
-                  />
+                <article key={id} className=" space-y-4 ">
+                  <div className="bg-gray-100 ">
+                    <img
+                      src={image}
+                      alt={name}
+                      className="h-44 xl:h-80 object-cover object-center mix-blend-darken  p-8 "
+                    />
+                  </div>
                   <div>
                     <p className="text-gray-500 capitalize "> {name}</p>
                     <p className="font-semibold"> {formatPrice(price)} </p>

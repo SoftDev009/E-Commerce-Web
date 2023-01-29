@@ -22,6 +22,8 @@ const initialState = {
   products_error: false,
   products: [],
   featured_products: [],
+  newArrival_products: [],
+  bestSeller_products: [],
 }
 
 export const ProductsProvider = ({ children }) => {

@@ -1,10 +1,13 @@
 import React from "react"
-import { Breadcrumb } from "../components"
+import { Breadcrumb, ProductsHome, Filters, AllProducts } from "../components"
 const Products = () => {
   return (
     <>
-      <Breadcrumb />
-      <div className="">Products</div>
+      <Breadcrumb title="products" />
+      <section className="container mx-auto px-5 xl:px-28 flex my-10 gap-10 relative ">
+        <Filters />
+        <AllProducts />
+      </section>
     </>
   )
 }
