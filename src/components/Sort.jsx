@@ -8,6 +8,8 @@ const Sort = () => {
     grid_view,
     setGridView,
     setListView,
+    sort,
+    updateSort,
   } = useFilterContext()
   return (
     <>
@@ -37,13 +39,15 @@ const Sort = () => {
         </div>
         <hr className=" w-2/5 " />
         <form className="space-x-6 text-xs md:flex justify-between items-center md:text-base ">
-          <label htmlFor="" className="hidden md:flex">
+          <label htmlFor="sort" className="hidden md:flex">
             sort by
           </label>
           <select
-            name=""
-            id=""
+            name="sort"
+            id="sort"
+            value={sort}
             className="py-1 text-xs md:text-base capitalize rounded"
+            onChange={(e) => updateSort(e)}
           >
             <option value="price-lowest">price (lowest)</option>
             <option value="price-highest">price (highest)</option>
