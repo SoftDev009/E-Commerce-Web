@@ -52,7 +52,7 @@ const SingleProduct = () => {
                   In stock
                 </span>
               ) : (
-                <span className="  text-red-300 border px-4 py-2 border-red-300 w-1/5 text-xs capitalize ">
+                <span className="  text-red-300 font-medium  border px-4 py-2 border-red-300 text-xs rounded capitalize ">
                   Out of stock
                 </span>
               )}
@@ -62,12 +62,16 @@ const SingleProduct = () => {
               <h4 className="text-3xl font-medium"> {name} </h4>
               {/* stars */}
               <div className="flex justify-center items-center space-x-2 border px-2 py-1 text-sm hover:cursor-pointer hover:border-black">
-                <p className="flex justify-center items-center font-semibold border-r-2  px-2">
-                  {stars}
-                  <span>
+                <p className="flex justify-center items-center font-semibold border-r-2 border-black  px-2 ">
+                  <span className="flex justify-center items-center gap-[2px] mr-1 ">
                     {" "}
                     <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
+                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
+                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
+                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
+                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
                   </span>{" "}
+                  {stars}
                 </p>
                 <p className="text-gray-500">{reviews} Reviews</p>
               </div>
@@ -89,14 +93,6 @@ const SingleProduct = () => {
                   (75% off){" "}
                 </span>{" "} */}
               </h5>
-              <p className="text-gray-500 text-sm">
-                Availability:{" "}
-                {stock > 0 ? (
-                  <span className="text-green-400"> In stock </span>
-                ) : (
-                  <span className="text-red-400">Out of stock</span>
-                )}
-              </p>
             </div>
 
             {/* colors */}

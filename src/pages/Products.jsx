@@ -1,12 +1,15 @@
 import React from "react"
-import { Breadcrumb, ProductsHome, Filters, AllProducts } from "../components"
+import { Breadcrumb, Filters, AllProducts, Sort } from "../components"
 const Products = () => {
   return (
     <>
       <Breadcrumb title="products" />
       <section className="container mx-auto px-5 xl:px-28 flex my-10 gap-10 relative ">
         <Filters />
-        <AllProducts />
+        <div className="space-y-8 w-full font-light  ">
+          <Sort />
+          <AllProducts />
+        </div>
       </section>
     </>
   )
