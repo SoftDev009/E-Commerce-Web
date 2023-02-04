@@ -11,10 +11,18 @@ import {
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
+    // Get the maximum price of the product
+    let maxPriceOfProduct = action.payload.map((product) => product.price)
+    maxPriceOfProduct = Math.max(...maxPriceOfProduct)
     return {
       ...state,
       all_products: [...action.payload],
       filtered_products: [...action.payload],
+      filters: {
+        ...state.filters,
+        max_price: maxPriceOfProduct,
+        price: maxPriceOfProduct,
+      },
     }
   }
   if (action.type === SET_GRID_VIEW) {
@@ -45,8 +53,27 @@ const filter_reducer = (state, action) => {
         return b.name.localeCompare(a.name)
       })
     }
-
     return { ...state, filtered_products: tempProducts }
+  }
+  if (action.type === UPDATE_FILTERS) {
+    const { name, value } = action.payload
+    return { ...state, filters: { ...state.filters, [name]: value } }
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        text: "",
+        company: "all",
+        category: "all",
+        color: "all",
+        price: state.filters.max_price,
+      },
+    }
+  }
+  if (action.type === FILTER_PRODUCTS) {
+    return { ...state }
   }
   throw new Error(`No matching "${action.type}" - action type `)
 }
