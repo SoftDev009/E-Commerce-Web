@@ -4,7 +4,7 @@ import { formatPrice } from "../utils/helper"
 const Grid_view_products = ({ products }) => {
   return (
     <>
-      <section className=" grid grid-cols-2 md:grid-cols-3 gap-6">
+      <section className=" grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map((product) => {
           const { id, name, image, price } = product
           return (
