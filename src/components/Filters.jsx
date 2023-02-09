@@ -1,176 +1,182 @@
 import React from 'react'
 import products from '../data'
 import {BiSearch} from 'react-icons/bi'
+import { useFilterContext } from "../context/filter_context"
+import { getUniqueValues } from "../utils/helper"
+import { Link } from "react-router-dom"
+
 const Filters = () => {
+  const {
+    filters: {
+      category,
+      color,
+      company,
+      max_price,
+      min_price,
+      price,
+      shipping,
+      text,
+    },
+    updateFilters,
+    clearFilters,
+    all_products,
+  } = useFilterContext()
+
+  const categories = getUniqueValues(all_products, "category")
+  const companies = getUniqueValues(all_products, "company")
+  const colors = getUniqueValues(all_products, "colors")
+
   return (
-    <aside className=" w-1/4  space-y-8 hidden lg:flex flex-col sticky top-0 font-light        ">
+    <aside className=" w-1/3 p-8  space-y-8 hidden lg:flex flex-col sticky top-0 font-light border  h-full      ">
       <div className="flex justify-between">
-        <h2 className="text-2xl">Filters</h2>
-        <button className="text-sm">Clear all</button>
+        <h2 className="text-2xl uppercase ">Filter by</h2>
+        <button className="text-sm text-green-600 " onClick={clearFilters}>
+          Clear all
+        </button>
       </div>
-      {/* Categories */}
+
+      {/* Search Product */}
       <div className="">
-        <div className="flex justify-between">
-          <h2 className="text-lg uppercase font-medium tracking-wider">
-            Categories
-          </h2>
-          <BiSearch className="w-6 h-6" />
-        </div>
-        <hr className="mt-2" />
-
-        <div className="mt-5 space-y-4 capitalize tracking-wider text-gray-500">
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Suits</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Shirts</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Jeans</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Trousers</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Casual Shoes</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">Seaters</label>
-          </div>
-        </div>
+        <input
+          type="text"
+          name="text"
+          placeholder="Search product..."
+          className=" w-full "
+          value={text}
+          // onChange={(e) => updateFilters()}
+          onChange={updateFilters}
+        />
       </div>
 
+      {/* Categories */}
+      <div className=" space-y-2 ">
+        <h2 className=" capitalize font-medium tracking-wider">Categories</h2>
+        {categories.map((category, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center space-x-5 capitalize group  "
+            >
+              <input
+                name={category}
+                id={category}
+                type="checkbox"
+                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
+                onChange={ updateFilters }
+              />
+              <label
+                htmlFor={category}
+                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+              >
+                {" "}
+                {category}{" "}
+              </label>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* company */}
+      <div className=" space-y-2 ">
+        <h2 className=" capitalize font-medium tracking-wider">Company</h2>
+        {/* {companies.map((company, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center space-x-5 capitalize group  "
+            >
+              <input
+                name={company}
+                id={company}
+                type="checkbox"
+                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
+              />
+              <label
+                htmlFor={company}
+                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+              >
+                {" "}
+                {company}{" "}
+              </label>
+            </div>
+          )
+        })} */}
+
+        <select name="company" id="company">
+          {companies.map((company, index) => {
+            return (
+              <option key={index} value={company} className=" capitalize  ">
+                {" "}
+                {company}{" "}
+              </option>
+            )
+          })}
+        </select>
+      </div>
       {/* Price */}
       <div className="">
         <div className="flex justify-between">
-          <h2 className="text-lg uppercase font-medium tracking-wider">
-            Price
-          </h2>
+          <label
+            htmlFor="price"
+            className="text-lg uppercase font-medium tracking-wider"
+          >
+            price
+          </label>
         </div>
         <hr className="mt-2" />
-        <div className="mt-5 space-y-4 capitalize text-gray-500 tracking-wider">
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$197 to $52523</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$250 to $5523</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$197 to $25523</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$97 to $2433</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$254 to $1255</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <label htmlFor="">$1200 to $7859</label>
-          </div>
+        <input
+          type="range"
+          id="price"
+          name="price"
+          min={20}
+          max={2000}
+          step={5}
+          // value={price}
+          className=" w-full py-2 "
+        />
+        <div className=" flex justify-between ">
+          <p> 20 </p>
+          <p> 2000 </p>
         </div>
       </div>
 
       {/* Color */}
-      <div className="">
-        <div className="flex justify-between">
-          <h2 className="text-lg uppercase font-medium tracking-wider">
-            colors
-          </h2>
-          <BiSearch className="w-6 h-6" />
-        </div>
-        <hr className="mt-2" />
+      {/* <div className=" space-y-2  ">
+        <h2 className=" capitalize font-medium tracking-wider">Colors</h2>
+        {colors.map((color, index) => {
+          if (color === "all") {
+            return <button className="">all</button>
+          }
+          return (
+            <div
+              key={index}
+              className="flex items-center space-x-5 capitalize group  "
+            >
+              <button className={` bg-[${color}]`}> {color} </button>
+              <button className={` bg-[${color}]`}> {color} </button>
+              <input
+                name={color}
+                id={color}
+                type="checkbox"
+                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
+              />
+              <span className={` bg-black w-3 h-3`}> </span>
+              <label
+                htmlFor={color}
+                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+              >
+                {" "}
+                {color}{" "}
+              </label>
+            </div>
+          )
+        })}
+      </div> */}
 
-        <div className="mt-5 space-y-4 text-gray-500 capitalize">
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <div className="w-5 h-5 bg-blue-500 rounded-full"></div>
-            <label htmlFor="">Blue</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <div className="w-5 h-5 bg-yellow-500 rounded-full"></div>
-            <label htmlFor="">yellow</label>
-          </div>
-
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <div className="w-5 h-5 bg-black rounded-full"></div>
-            <label htmlFor="">black</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <div className="w-5 h-5 bg-green-500 rounded-full"></div>
-            <label htmlFor="">green</label>
-          </div>
-          <div className="space-x-8 flex items-center">
-            <input
-              type="checkbox"
-              className="h-5 w-5 rounded  text-[#48c4a0] focus:ring-0"
-            />
-            <div className="w-5 h-5 bg-pink-500 rounded-full"></div>
-            <label htmlFor="">pink</label>
-          </div>
-        </div>
+      {/* Shipping */}
+      <div className=" flex items-center space-x-10  ">
+        <input type="checkbox" className=" " />
+        <label>Shipping </label>
       </div>
     </aside>
   )
