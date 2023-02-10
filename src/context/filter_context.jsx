@@ -53,6 +53,7 @@ export const FiltersProvider = ({ children }) => {
   }
 
   const updateSort = (e) => {
+    const value = e.target.value
     dispatch({ type: UPDATE_SORT, payload: value })
   }
 
