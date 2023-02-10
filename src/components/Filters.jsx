@@ -1,6 +1,6 @@
 import React from "react"
 import { useFilterContext } from "../context/filter_context"
-import { getUniqueValues } from "../utils/helper"
+import { formatPrice, getUniqueValues } from "../utils/helper"
 
 const Filters = () => {
   const {
@@ -47,26 +47,40 @@ const Filters = () => {
       {/* Categories */}
       <div className=" space-y-2 ">
         <h2 className=" capitalize font-medium tracking-wider">Categories</h2>
-        {categories.map((category, index) => {
+        {categories.map((categoryButton, index) => {
           return (
-            <div
-              key={index}
-              className="flex items-center space-x-5 capitalize group "
-            >
-              <input
-                type="checkbox"
-                name={category}
-                id={category}
-                className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
-              />
-              <label
-                htmlFor={category}
-                className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+            <div className="flex " key={index}>
+              <button
+                name="category"
+                onClick={updateFilters}
+                className={`capitalize text-lg ${
+                  category === categoryButton ? "text-green-600" : null
+                } `}
               >
-                {" "}
-                {category}{" "}
-              </label>
+                {categoryButton}
+              </button>
             </div>
+            // <div
+            //   key={index}
+            //   className="flex items-center space-x-5 capitalize group "
+            // >
+            //   <input
+            //     type="checkbox"
+            //     // name={category}
+            //     name="category"
+            //     id={category}
+            //     className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
+            //     onChange={(e) => console.log(e.target.value)}
+            //     // onChange={updateFilters}
+            //   />
+            //   <label
+            //     htmlFor={category}
+            //     className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+            //   >
+            //     {" "}
+            //     {category}{" "}
+            //   </label>
+            // </div>
           )
         })}
       </div>
@@ -74,12 +88,21 @@ const Filters = () => {
       {/* company */}
       <div className=" space-y-2 ">
         <h2 className=" capitalize font-medium tracking-wider">Brand</h2>
-        <select name="company" id="company">
-          {companies.map((company, index) => {
+        <select
+          name="company"
+          value={company}
+          onChange={updateFilters}
+          className=" capitalize "
+        >
+          {companies.map((companyOption, index) => {
             return (
-              <option key={index} value={company} className=" capitalize  ">
+              <option
+                key={index}
+                value={companyOption}
+                className=" capitalize  "
+              >
                 {" "}
-                {company}{" "}
+                {companyOption}{" "}
               </option>
             )
           })}
@@ -99,18 +122,14 @@ const Filters = () => {
         <hr className="mt-2" />
         <input
           type="range"
-          id="price"
           name="price"
-          min={20}
-          max={2000}
-          step={5}
-          // value={price}
+          onChange={updateFilters}
+          min={min_price}
+          max={max_price}
+          value={price}
           className=" w-full py-2 "
         />
-        <div className=" flex justify-between ">
-          <p> 20 </p>
-          <p> 2000 </p>
-        </div>
+        <p className="text-end"> {formatPrice(price)} </p>
       </div>
 
       {/* Shipping */}
@@ -119,7 +138,9 @@ const Filters = () => {
           type="checkbox"
           name="shipping"
           id="shipping"
+          checked={shipping}
           className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
+          onChange={updateFilters}
         />
         <label
           htmlFor="shipping"

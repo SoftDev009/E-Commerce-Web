@@ -26,7 +26,7 @@ const initialState = {
     color: "all",
     min_price: 0,
     max_price: 0,
-    price: "",
+    price: 0,
     shipping: false,
   },
 }
@@ -57,12 +57,21 @@ export const FiltersProvider = ({ children }) => {
   }
 
   const updateFilters = (e) => {
-    const name = e.target.name
-    const value = e.target.value
+    let name = e.target.name
+    let value = e.target.value
+    if (name === "shipping") {
+      value = e.target.checked
+    }
+    if (name === "category") {
+      value = e.target.textContent
+    }
+    if (name === "price") {
+      value = Number(value)
+    }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } })
   }
 
-  const clearFilters = () => {
+  const clearFilters = (e) => {
     dispatch({ type: CLEAR_FILTERS })
   }
 
