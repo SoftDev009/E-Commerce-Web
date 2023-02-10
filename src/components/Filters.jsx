@@ -1,9 +1,6 @@
-import React from 'react'
-import products from '../data'
-import {BiSearch} from 'react-icons/bi'
+import React from "react"
 import { useFilterContext } from "../context/filter_context"
 import { getUniqueValues } from "../utils/helper"
-import { Link } from "react-router-dom"
 
 const Filters = () => {
   const {
@@ -43,7 +40,6 @@ const Filters = () => {
           placeholder="Search product..."
           className=" w-full "
           value={text}
-          // onChange={(e) => updateFilters()}
           onChange={updateFilters}
         />
       </div>
@@ -55,18 +51,17 @@ const Filters = () => {
           return (
             <div
               key={index}
-              className="flex items-center space-x-5 capitalize group  "
+              className="flex items-center space-x-5 capitalize group "
             >
               <input
+                type="checkbox"
                 name={category}
                 id={category}
-                type="checkbox"
-                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
-                onChange={ updateFilters }
+                className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
               />
               <label
                 htmlFor={category}
-                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+                className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
               >
                 {" "}
                 {category}{" "}
@@ -78,30 +73,7 @@ const Filters = () => {
 
       {/* company */}
       <div className=" space-y-2 ">
-        <h2 className=" capitalize font-medium tracking-wider">Company</h2>
-        {/* {companies.map((company, index) => {
-          return (
-            <div
-              key={index}
-              className="flex items-center space-x-5 capitalize group  "
-            >
-              <input
-                name={company}
-                id={company}
-                type="checkbox"
-                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
-              />
-              <label
-                htmlFor={company}
-                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
-              >
-                {" "}
-                {company}{" "}
-              </label>
-            </div>
-          )
-        })} */}
-
+        <h2 className=" capitalize font-medium tracking-wider">Brand</h2>
         <select name="company" id="company">
           {companies.map((company, index) => {
             return (
@@ -113,6 +85,7 @@ const Filters = () => {
           })}
         </select>
       </div>
+
       {/* Price */}
       <div className="">
         <div className="flex justify-between">
@@ -140,43 +113,21 @@ const Filters = () => {
         </div>
       </div>
 
-      {/* Color */}
-      {/* <div className=" space-y-2  ">
-        <h2 className=" capitalize font-medium tracking-wider">Colors</h2>
-        {colors.map((color, index) => {
-          if (color === "all") {
-            return <button className="">all</button>
-          }
-          return (
-            <div
-              key={index}
-              className="flex items-center space-x-5 capitalize group  "
-            >
-              <button className={` bg-[${color}]`}> {color} </button>
-              <button className={` bg-[${color}]`}> {color} </button>
-              <input
-                name={color}
-                id={color}
-                type="checkbox"
-                className=" w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none focus:text-green-400 "
-              />
-              <span className={` bg-black w-3 h-3`}> </span>
-              <label
-                htmlFor={color}
-                className=" py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
-              >
-                {" "}
-                {color}{" "}
-              </label>
-            </div>
-          )
-        })}
-      </div> */}
-
       {/* Shipping */}
-      <div className=" flex items-center space-x-10  ">
-        <input type="checkbox" className=" " />
-        <label>Shipping </label>
+      <div className="flex items-center space-x-5 capitalize group ">
+        <input
+          type="checkbox"
+          name="shipping"
+          id="shipping"
+          className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
+        />
+        <label
+          htmlFor="shipping"
+          className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+        >
+          {" "}
+          shipping{" "}
+        </label>
       </div>
     </aside>
   )
