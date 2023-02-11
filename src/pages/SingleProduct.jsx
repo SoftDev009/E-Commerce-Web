@@ -1,18 +1,18 @@
 import React from "react"
-import { BsStarFill, BsCheck, BsHandbag } from "react-icons/bs"
+import { BsStarFill } from "react-icons/bs"
 import { useProductsContext } from "../context/products_context"
 import { single_product_url as url } from "../utils/constants"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
-import { Error, Loading, ProductImages } from "../components"
+import { AddToCart, Error, Loading, ProductImages } from "../components"
 import { formatPrice } from "../utils/helper"
 
 const SingleProduct = () => {
   const {
-    single_product_loading,
-    single_product_error,
+    single_product_loading: loading,
+    single_product_error: error,
+    singleProduct: product,
     fetchSingleProduct,
-    singleProduct,
   } = useProductsContext()
   const { id } = useParams()
 
@@ -20,8 +20,8 @@ const SingleProduct = () => {
     fetchSingleProduct(`${url}${id}`)
   }, [id])
 
-  if (single_product_loading) return <Loading />
-  if (single_product_error) return <Error />
+  if (loading) return <Loading />
+  if (error) return <Error />
 
   const {
     name,
@@ -36,7 +36,7 @@ const SingleProduct = () => {
     stars,
     stock,
     weight,
-  } = singleProduct
+  } = product
   return (
     <>
       <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-10 my-10 xl:my-32 ">
@@ -94,44 +94,7 @@ const SingleProduct = () => {
                 </span>{" "} */}
               </h5>
             </div>
-
-            {/* colors */}
-            <div className="flex space-x-4">
-              <span className="xl:text-xl text-sm text-gray-500">Colors :</span>
-              <div className="space-x-4 flex justify-center items-center">
-                <button className="bg-blue-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-                  {" "}
-                  <BsCheck />{" "}
-                </button>
-                <button className="bg-yellow-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-                  {" "}
-                  <BsCheck />{" "}
-                </button>
-                <button className="bg-green-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-                  {" "}
-                  <BsCheck />{" "}
-                </button>
-                <button className="bg-black rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-                  {" "}
-                  <BsCheck />{" "}
-                </button>
-              </div>
-            </div>
-
-            {/* Buttons */}
-            <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center pt-12">
-              <button className="flex justify-center  items-center bg-black md:px-8 xl:px-16 sm:px-16 px-8 text-sm py-3 font-medium uppercase tracking-wider text-white">
-                {" "}
-                <span>
-                  {" "}
-                  <BsHandbag className="w-5 h-5 mr-2" />{" "}
-                </span>
-                Add to bag
-              </button>
-              <button className="border md:px-8 sm:px-12 px-8 text-sm xl:px-16 py-3 uppercase tracking-wider font-medium ">
-                buy now
-              </button>
-            </div>
+            <AddToCart product={product} />
             <hr />
           </section>
         </div>
