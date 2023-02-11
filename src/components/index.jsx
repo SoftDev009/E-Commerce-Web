@@ -21,8 +21,12 @@ import ProductImages from "./ProductImages"
 import Sort from "./Sort"
 import Grid_view_products from "./Grid_view_products"
 import List_view_products from "./List_view_products"
+import CartComponent from "./CartComponent"
+import AddToCart from "./AddToCart"
 
 export {
+  AddToCart,
+  CartComponent,
   List_view_products,
   Grid_view_products,
   Sort,
