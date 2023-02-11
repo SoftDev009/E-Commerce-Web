@@ -1,11 +1,12 @@
 import React, { useState } from "react"
-import { BsStarFill, BsCheck, BsHandbag } from "react-icons/bs"
+import { BsCheck } from "react-icons/bs"
 import { HiOutlineShoppingCart } from "react-icons/hi"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product
   const [amount, setAmount] = useState(1)
+  const [mainColor, setMainColor] = useState(colors?.[0])
 
   // Increase Cart
   const increaseAmount = () => {
@@ -38,22 +39,19 @@ const AddToCart = ({ product }) => {
             Color :
           </span>
           <div className="space-x-4 flex justify-center items-center">
-            <button className="bg-blue-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-              {" "}
-              <BsCheck />{" "}
-            </button>
-            <button className="bg-yellow-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-              {" "}
-              <BsCheck />{" "}
-            </button>
-            <button className="bg-green-500 rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-              {" "}
-              <BsCheck />{" "}
-            </button>
-            <button className="bg-black rounded-full text-white  xl:px-[0.18rem] xl:py-[0.18rem]">
-              {" "}
-              <BsCheck />{" "}
-            </button>
+            {colors?.map((colorButton, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => setMainColor(colorButton)}
+                  style={{ background: colorButton }}
+                  className={` text-white w-7 h-7 rounded-full flex justify-center items-center   `}
+                >
+                  {" "}
+                  {mainColor === colorButton ? <BsCheck /> : null}
+                </button>
+              )
+            })}
           </div>
         </div>
 
@@ -98,16 +96,12 @@ const AddToCart = ({ product }) => {
         {/* Add to cart Buttons */}
         <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center">
           <button className="flex justify-center items-center bg-black text-sm uppercase tracking-wider text-white py-4 px-16 hover:bg-green-500  ">
-            {/* <button className="flex justify-center  items-center bg-black md:px-8 xl:px-20 sm:px-16 px-8 text-sm py-5 uppercase tracking-wider text-white"> */}{" "}
             <span>
               {" "}
               <HiOutlineShoppingCart className="w-5 h-5 mr-2 " />{" "}
             </span>
-            Add to bag
+            Add to Cart
           </button>
-          {/* <button className="border md:px-8 sm:px-12 px-8 text-sm xl:px-16 py-3 uppercase tracking-wider font-medium ">
-                buy now
-              </button> */}
         </div>
       </section>
     </>
