@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react"
+import { createContext, useContext, useEffect, useReducer } from "react"
 import reducer from "../reducers/cart_reducer"
 import {
   ADD_TO_CART,
@@ -28,8 +28,15 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: REMOVE_CART_ITEM, payload: { id } })
   }
 
+  // Toggle amount
+  const toggleAmount = (id, value) => {
+    dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } })
+  }
+
   return (
-    <CartContext.Provider value={{ ...state, addToCart, removeItem }}>
+    <CartContext.Provider
+      value={{ ...state, addToCart, removeItem, toggleAmount }}
+    >
       {children}
     </CartContext.Provider>
   )

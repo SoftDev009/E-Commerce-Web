@@ -1,15 +1,17 @@
 import React from "react"
 import image1 from "../assets/testImage2.png"
 import { BiMinus, BiPlus } from "react-icons/bi"
+import { HiOutlineTrash } from "react-icons/hi"
+import { useCartContext } from "../context/cart_context"
 const CartComponent = () => {
+  const { cart, removeItem, toggleAmount } = useCartContext()
   return (
-    <section className="container mx-auto mt-20 px-5 lg:px-28 flex flex-col md:flex-row gap-28 justify-between my-">
+    <section className="container mx-auto mt-20 px-5 lg:px-28 flex flex-col md:flex-row gap-28 justify-between">
       {/* Right */}
       <div className="md:w-full  ">
-        <div className=" flex justify-between items-center font-medium text-xl py-2 capitalize tracking-widest">
-          <h4 className="">shopping Cart</h4>
-          <p>3 Items</p>
-        </div>
+        <h4 className="font-medium text-xl capitalize tracking-widest ">
+          shopping Cart
+        </h4>
         <hr />
         {/* Headers */}
         <div className=" grid-cols-5 hidden md:grid text-sm tracking-widest mt-10    text-gray-500 uppercase">
@@ -18,152 +20,66 @@ const CartComponent = () => {
           <p className="text-right">Price</p>
           <p className="text-right">Total</p>
         </div>
-
-        {/* Product */}
-        <article className="grid md:grid-cols-5 mt-5 border-b pb-6 ">
-          {/* image */}
-          <div className="flex justify-center items-center col-span-2 space-x-4  ">
-            <img
-              src={image1}
-              alt=""
-              className="w-28 h-32 object-cover object-center bg-gray-100 "
-            />
-            <div className="space-y-2">
-              <p className="">Arm chair for older people </p>
-              <p className="text-sm capitalize flex items-center">
-                {" "}
-                color :{" "}
-                <span className="w-4 h-4 bg-yellow-500 rounded-full ml-3">
+        {/* Cart content */}
+        {cart.map((item) => {
+          const { amount, color, id, image, name, price } = item
+          return (
+            <article
+              key={id}
+              className="grid md:grid-cols-5 mt-5 border-b pb-6  "
+            >
+              {/* image */}
+              <div className="flex justify-center items-center col-span-2 space-x-4  ">
+                <img
+                  src={image}
+                  alt={name}
+                  className="w-28 h-32 object-cover object-center bg-gray-100 "
+                />
+                <div className=" h-full flex flex-col justify-between  ">
+                  <p className=""> {name} </p>
+                  <p className="text-sm  uppercase flex items-center  ">
+                    {" "}
+                    color :{" "}
+                    <span
+                      style={{ background: color }}
+                      className="w-4 h-4  rounded-full ml-3"
+                    >
+                      {" "}
+                    </span>{" "}
+                  </p>
+                  <button className="" onClick={() => removeItem(id)}>
+                    {" "}
+                    <HiOutlineTrash className=" w-5 h-5 " />{" "}
+                  </button>
+                </div>
+              </div>
+              {/* Quantity */}
+              <div className=" space-x-4  flex justify-center items-center ">
+                <button
+                  className="text-right"
+                  onClick={() => toggleAmount(id, "decrease")}
+                >
                   {" "}
-                </span>{" "}
-              </p>
-            </div>
-          </div>
-          {/* Quantity */}
-          <div className=" space-x-4  flex justify-center items-center ">
-            <button className="text-right">
-              {" "}
-              <BiMinus />{" "}
-            </button>
-            <p className="text-center">2</p>
-            <button className="text-right">
-              {" "}
-              <BiPlus />{" "}
-            </button>
-          </div>
-          <p className="text-right flex justify-end items-center">$50.00</p>
-          <p className="font-medium text-right flex justify-end items-center">
-            $250.00
-          </p>
-        </article>
-        <article className="grid md:grid-cols-5 mt-5 border-b pb-6 ">
-          {/* image */}
-          <div className="flex justify-center items-center col-span-2 space-x-4  ">
-            <img
-              src={image1}
-              alt=""
-              className="w-28 h-32 object-cover object-center bg-gray-100 "
-            />
-            <div className="space-y-2">
-              <p className="">Arm chair for older people </p>
-              <p className="text-sm capitalize flex items-center">
-                {" "}
-                color :{" "}
-                <span className="w-4 h-4 bg-yellow-500 rounded-full ml-3">
+                  <BiMinus />{" "}
+                </button>
+                <p className="text-center"> {amount} </p>
+                <button
+                  className="text-right"
+                  onClick={() => toggleAmount(id, "increase")}
+                >
                   {" "}
-                </span>{" "}
+                  <BiPlus />{" "}
+                </button>
+              </div>
+              <p className="text-right flex justify-end items-center">
+                ${price}
               </p>
-            </div>
-          </div>
-          {/* Quantity */}
-          <div className=" space-x-4  flex justify-center items-center ">
-            <button className="text-right">
-              {" "}
-              <BiMinus />{" "}
-            </button>
-            <p className="text-center">2</p>
-            <button className="text-right">
-              {" "}
-              <BiPlus />{" "}
-            </button>
-          </div>
-          <p className="text-right flex justify-end items-center">$50.00</p>
-          <p className="font-medium text-right flex justify-end items-center">
-            $250.00
-          </p>
-        </article>
-        <article className="grid md:grid-cols-5 mt-5 border-b pb-6 ">
-          {/* image */}
-          <div className="flex justify-center items-center col-span-2 space-x-4  ">
-            <img
-              src={image1}
-              alt=""
-              className="w-28 h-32 object-cover object-center bg-gray-100 "
-            />
-            <div className="space-y-2">
-              <p className="">Arm chair for older people </p>
-              <p className="text-sm capitalize flex items-center">
-                {" "}
-                color :{" "}
-                <span className="w-4 h-4 bg-yellow-500 rounded-full ml-3">
-                  {" "}
-                </span>{" "}
+              <p className="font-medium text-right flex justify-end items-center">
+                ${price * amount}
               </p>
-            </div>
-          </div>
-          {/* Quantity */}
-          <div className=" space-x-4  flex justify-center items-center ">
-            <button className="text-right">
-              {" "}
-              <BiMinus />{" "}
-            </button>
-            <p className="text-center">2</p>
-            <button className="text-right">
-              {" "}
-              <BiPlus />{" "}
-            </button>
-          </div>
-          <p className="text-right flex justify-end items-center">$50.00</p>
-          <p className="font-medium text-right flex justify-end items-center">
-            $250.00
-          </p>
-        </article>
-        <article className="grid md:grid-cols-5 mt-5 border-b pb-6 ">
-          {/* image */}
-          <div className="flex justify-center items-center col-span-2 space-x-4  ">
-            <img
-              src={image1}
-              alt=""
-              className="w-28 h-32 object-cover object-center bg-gray-100 "
-            />
-            <div className="space-y-2">
-              <p className="">Arm chair for older people </p>
-              <p className="text-sm capitalize flex items-center">
-                {" "}
-                color :{" "}
-                <span className="w-4 h-4 bg-yellow-500 rounded-full ml-3">
-                  {" "}
-                </span>{" "}
-              </p>
-            </div>
-          </div>
-          {/* Quantity */}
-          <div className=" space-x-4  flex justify-center items-center ">
-            <button className="text-right">
-              {" "}
-              <BiMinus />{" "}
-            </button>
-            <p className="text-center">2</p>
-            <button className="text-right">
-              {" "}
-              <BiPlus />{" "}
-            </button>
-          </div>
-          <p className="text-right flex justify-end items-center">$50.00</p>
-          <p className="font-medium text-right flex justify-end items-center">
-            $250.00
-          </p>
-        </article>
+            </article>
+          )
+        })}
       </div>
 
       {/* Left */}
