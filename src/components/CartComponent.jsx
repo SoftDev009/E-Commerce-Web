@@ -3,8 +3,10 @@ import image1 from "../assets/testImage2.png"
 import { BiMinus, BiPlus } from "react-icons/bi"
 import { HiOutlineTrash } from "react-icons/hi"
 import { useCartContext } from "../context/cart_context"
+import { formatPrice } from "../utils/helper"
 const CartComponent = () => {
-  const { cart, removeItem, toggleAmount } = useCartContext()
+  const { cart, removeItem, toggleAmount, total_amount, shipping_fee } =
+    useCartContext()
   return (
     <section className="container mx-auto mt-20 px-5 lg:px-28 flex flex-col md:flex-row gap-28 justify-between">
       {/* Right */}
@@ -90,7 +92,11 @@ const CartComponent = () => {
         <hr />
         <article className=" bg-gray-100 mt-9 border-b-4 border-white border-dashed px-4 py-8 text-gray-500 space-y-4 rounded-t-md font-light text-sm  ">
           <h5 className="flex justify-between items-center">
-            Bag total <span className="text-black text-lg">$3,199.00</span>{" "}
+            Bag total{" "}
+            <span className="text-black text-lg">
+              {" "}
+              {formatPrice(total_amount)}{" "}
+            </span>{" "}
           </h5>
           <h5 className="flex justify-between items-center">
             Bag discount{" "}
@@ -100,13 +106,18 @@ const CartComponent = () => {
             Delivery Fee{" "}
             <span className=" text-lg text-green-500">
               Free{" "}
-              <span className="text-black line-through text-sm"> $99.00</span>{" "}
+              <span className="text-black line-through text-sm">
+                {" "}
+                {formatPrice(shipping_fee)}
+              </span>{" "}
             </span>{" "}
           </h5>
         </article>
         <h5 className="flex rounded-b-md justify-between items-center text-gray-500 bg-gray-100/60 py-8 px-4 bg-blu-100/60 text-sm">
           Subtotal{" "}
-          <span className="text-xl font-medium text-black">$2010.00</span>{" "}
+          <span className="text-xl font-medium text-black">
+            {formatPrice(total_amount + shipping_fee)}
+          </span>{" "}
         </h5>
         <button className="bg-black w-full text-white py-4 mt-5 uppercase tracking-widest rounded">
           Proceed to Checkout
