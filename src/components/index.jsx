@@ -25,8 +25,10 @@ import CartComponent from "./CartComponent"
 import AddToCart from "./AddToCart"
 import ProductImage from "./ProductImage"
 import Product_title from "./Product_title"
+import View_button from "./View_button"
 
 export {
+  View_button,
   Product_title,
   ProductImage,
   AddToCart,

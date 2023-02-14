@@ -1,5 +1,6 @@
 import React from "react"
 import { ProductImage, Product_title } from "../components"
+import { View_button } from "../components"
 
 const CategoryProducts = ({ products, category_name }) => {
   return (
@@ -13,9 +14,7 @@ const CategoryProducts = ({ products, category_name }) => {
             <p className="text-sm font-light tracking-wider text-gray-400">
               Small be and the rain would phase distance, succeed align.
             </p>
-            <button className="uppercase text-gray-600 text-xs tracking-wider border-b border-black font-medium py-1 pt-6">
-              Shop Now
-            </button>
+            <View_button title="shop now" />
           </div>
         </article>
         {products.slice(0, 3).map((product) => {
