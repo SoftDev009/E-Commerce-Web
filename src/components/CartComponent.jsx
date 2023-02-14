@@ -3,7 +3,7 @@ import { BiMinus, BiPlus } from "react-icons/bi"
 import { HiOutlineTrash } from "react-icons/hi"
 import { useCartContext } from "../context/cart_context"
 import { formatPrice } from "../utils/helper"
-import { ProductImage } from "../components"
+import { Order_summary, ProductImage } from "../components"
 const CartComponent = () => {
   const { cart, removeItem, toggleAmount, total_amount, shipping_fee } =
     useCartContext()
@@ -11,7 +11,7 @@ const CartComponent = () => {
     <section className="container mx-auto mt-20 px-5 lg:px-28 flex flex-col md:flex-row gap-28 justify-between">
       {/* Right */}
       <div className="md:w-full  ">
-        <h4 className="font-medium text-xl capitalize tracking-widest ">
+        <h4 className="font-medium text-xl flex items-center py-2 capitalize tracking-widest ">
           shopping Cart
         </h4>
         <hr />
@@ -62,63 +62,27 @@ const CartComponent = () => {
                 </button>
                 <p className="text-center"> {amount} </p>
                 <button
-                  className="text-right"
+                  className={`text-right  `}
                   onClick={() => toggleAmount(id, "increase")}
                 >
                   {" "}
                   <BiPlus />{" "}
                 </button>
               </div>
+              {/* Price */}
               <p className="text-right flex justify-end items-center">
-                ${price}
+                {formatPrice(price)}
               </p>
               <p className="font-medium text-right flex justify-end items-center">
-                ${price * amount}
+                {formatPrice(price * amount)}
               </p>
             </article>
           )
         })}
       </div>
-      {/* Order summary */}
       {/* Left */}
-      <div className=" md:w-1/2 mb-5 md:mb-0 ">
-        <div className=" font-medium  text-xl flex items-center py-2 capitalize tracking-widest">
-          <h4 className="">Order summary</h4>
-        </div>
-        <hr />
-        <article className=" bg-gray-100 mt-9 border-b-4 border-white border-dashed px-4 py-8 text-gray-500 space-y-4 rounded-t-md font-light text-sm  ">
-          <h5 className="flex justify-between items-center">
-            Bag total{" "}
-            <span className="text-black text-lg">
-              {" "}
-              {formatPrice(total_amount)}{" "}
-            </span>{" "}
-          </h5>
-          <h5 className="flex justify-between items-center">
-            Bag discount{" "}
-            <span className=" text-green-500 text-lg"> -$1,663.00</span>{" "}
-          </h5>
-          <h5 className="flex justify-between items-center">
-            Delivery Fee{" "}
-            <span className=" text-lg text-green-500">
-              Free{" "}
-              <span className="text-black line-through text-sm">
-                {" "}
-                {formatPrice(shipping_fee)}
-              </span>{" "}
-            </span>{" "}
-          </h5>
-        </article>
-        <h5 className="flex rounded-b-md justify-between items-center text-gray-500 bg-gray-100/60 py-8 px-4 bg-blu-100/60 text-sm">
-          Subtotal{" "}
-          <span className="text-xl font-medium text-black">
-            {formatPrice(total_amount + shipping_fee)}
-          </span>{" "}
-        </h5>
-        <button className="bg-black w-full text-white py-4 mt-5 uppercase tracking-widest rounded">
-          Proceed to Checkout
-        </button>
-      </div>
+      {/* Order summary */}
+      <Order_summary />
     </section>
   )
 }
