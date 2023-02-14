@@ -2,8 +2,11 @@ import React, { useState } from "react"
 import { BsCheck } from "react-icons/bs"
 import { HiOutlineShoppingCart } from "react-icons/hi"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
+import { useCartContext } from "../context/cart_context"
+import { Link } from "react-router-dom"
 
 const AddToCart = ({ product }) => {
+  const { addToCart } = useCartContext()
   const { id, colors, stock } = product
   const [amount, setAmount] = useState(1)
   const [mainColor, setMainColor] = useState(colors?.[0])
@@ -70,7 +73,7 @@ const AddToCart = ({ product }) => {
               type="number"
               min={1}
               max={10}
-              value={amount}
+              // value={amount}
               className=" w-16 h-[50px] text-center outline-none border-gray-200 focus:ring-0 focus-within:ring-green-300 focus:outline-none focus:border-gray-200"
               aria-label="Quantity"
             />
@@ -95,13 +98,17 @@ const AddToCart = ({ product }) => {
 
         {/* Add to cart Buttons */}
         <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center">
-          <button className="flex justify-center items-center bg-black text-sm uppercase tracking-wider text-white py-4 px-16 hover:bg-green-500  ">
+          <Link
+            to="/cart"
+            className="flex justify-center items-center bg-black text-sm uppercase tracking-wider text-white py-4 px-16 hover:bg-green-500  "
+            onClick={() => addToCart(id, mainColor, amount, product)}
+          >
             <span>
               {" "}
               <HiOutlineShoppingCart className="w-5 h-5 mr-2 " />{" "}
             </span>
             Add to Cart
-          </button>
+          </Link>
         </div>
       </section>
     </>

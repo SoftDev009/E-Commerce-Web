@@ -1,10 +1,6 @@
 import React from "react"
-import { useProductsContext } from "../context/products_context"
 import { formatPrice } from "../utils/helper"
-
 const CollectionProducts = ({ products, title }) => {
-  const { products_loading } = useProductsContext()
-
   return (
     <>
       <section className=" md:space-y-4 w-full ">
@@ -13,7 +9,6 @@ const CollectionProducts = ({ products, title }) => {
           {title}{" "}
         </h2>
         <hr className=" " />
-        {products_loading && <p> Loading... </p>}
         {products.slice(0, 3).map((product) => {
           const { name, price, id, image } = product
           return (

@@ -1,17 +1,10 @@
 import React from 'react'
-import products from '../data'
-import { formatPrice } from '../utils/helper'
-import { CollectionProducts } from "../components"
+import { CollectionProducts, Loading } from "../components"
 import { useProductsContext } from "../context/products_context"
 
 const ProductGrid = () => {
-  const {
-    products_loading,
-    products_error,
-    featured_products,
-    newArrival_products,
-    bestSeller_products,
-  } = useProductsContext()
+  const { featured_products, newArrival_products, bestSeller_products } =
+    useProductsContext()
 
   return (
     <section className="container mx-auto gap-10 px-5 xl:px-28 grid grid-cols-1 md:grid-cols-3 capitalize place-items-center mt-20 ">
