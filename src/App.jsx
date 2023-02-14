@@ -1,6 +1,14 @@
 import { Navbar, Footer } from "./components"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home, Cart, Products, SingleProduct, Error } from "./pages"
+import {
+  Home,
+  Cart,
+  Products,
+  SingleProduct,
+  Error,
+  Checkout,
+  ProtectedRoute,
+} from "./pages"
 
 function App() {
   return (
@@ -11,7 +19,15 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Products />} />
         <Route path="/shop/:id" element={<SingleProduct />} />
-        {/* TODO: Add checkout page here */}
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              {" "}
+              <Checkout />{" "}
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

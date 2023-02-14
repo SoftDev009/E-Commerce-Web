@@ -5,8 +5,7 @@ import { useCartContext } from "../context/cart_context"
 import { formatPrice } from "../utils/helper"
 import { Order_summary, ProductImage } from "../components"
 const CartComponent = () => {
-  const { cart, removeItem, toggleAmount, total_amount, shipping_fee } =
-    useCartContext()
+  const { cart, removeItem, toggleAmount } = useCartContext()
   return (
     <section className="container mx-auto mt-20 px-5 lg:px-28 flex flex-col md:flex-row gap-28 justify-between">
       {/* Right */}
