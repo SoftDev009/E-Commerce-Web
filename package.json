@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.0.0",
     "airtable-node": "^0.1.20",
     "axios": "^1.2.5",
     "dotenv": "^16.0.3",
