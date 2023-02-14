@@ -1,5 +1,5 @@
 import React from "react"
-import { formatPrice } from "../utils/helper"
+import { ProductImage, Product_title } from "../components"
 
 const CategoryProducts = ({ products, category_name }) => {
   return (
@@ -19,23 +19,17 @@ const CategoryProducts = ({ products, category_name }) => {
           </div>
         </article>
         {products.slice(0, 3).map((product) => {
-          const { name, price, id, image, new_in_market, sale } = product
+          const { name, price, id, new_in_market, sale } = product
           return (
             <article
               key={id}
-              className=" relative space-y-2 xl:space-y-5 xl:my-5 "
+              className=" relative space-y-2 xl:space-y-5 xl:my-5 group  "
             >
-              <div className=" bg-gray-100 ">
-                <img
-                  src={image}
-                  alt={name}
-                  className=" w-full h-52 xl:h-96 object-cover object-center mix-blend-multiply  "
-                />
-              </div>
-              <div>
-                <p className="text-gray-500 capitalize "> {name}</p>
-                <p className="font-semibold"> {formatPrice(price)} </p>
-              </div>
+              <ProductImage
+                product={product}
+                className=" w-full h-52 xl:h-96 p-8 "
+              />
+              <Product_title product={product} />
               {sale && (
                 <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-5 xl:-top-8 right-3 text-xs ">
                   <p>Sale</p>

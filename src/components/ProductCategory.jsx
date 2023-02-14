@@ -1,10 +1,8 @@
 import React from 'react'
 import { useProductsContext } from "../context/products_context"
-import products from "../data"
-import { formatPrice } from "../utils/helper"
 import { CategoryProducts } from "../components"
 const ProductCategory = () => {
-  const { products_loading, products_error, products } = useProductsContext()
+  const { products } = useProductsContext()
 
   const all_Decoration_products = products.filter(
     (product) => product.category === "decoration"

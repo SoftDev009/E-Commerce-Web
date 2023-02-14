@@ -8,7 +8,11 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#48c4a0",
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 }

@@ -1,5 +1,8 @@
 import React from "react"
 import { formatPrice } from "../utils/helper"
+import { ProductImage, Product_title, ProductCard } from "../components"
+import { Link } from "react-router-dom"
+
 const CollectionProducts = ({ products, title }) => {
   return (
     <>
@@ -10,20 +13,11 @@ const CollectionProducts = ({ products, title }) => {
         </h2>
         <hr className=" " />
         {products.slice(0, 3).map((product) => {
-          const { name, price, id, image } = product
+          const { name, price, id } = product
           return (
-            <div key={id} className=" flex space-x-6 pt-8 md:pt-4  ">
-              <div className=" bg-gray-100  ">
-                <img
-                  src={image}
-                  alt={`${name} product `}
-                  className="w-20 h-20 object-cover object-center mix-blend-multiply   "
-                />
-              </div>
-              <div className=" space-y-1 ">
-                <p className="text-gray-600 text-sm"> {name} </p>
-                <p className="font-semibold"> {formatPrice(price)} </p>
-              </div>
+            <div key={id} className=" flex space-x-6 pt-8 md:pt-4 group  ">
+              <ProductImage product={product} className="w-20 h-20 p-2 " />
+              <Product_title product={product} />
             </div>
           )
         })}

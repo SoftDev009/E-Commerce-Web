@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { useProductsContext } from "../context/products_context"
-import { formatPrice } from "../utils/helper"
-import { Loading, Error } from "../components"
+import {
+  Loading,
+  Error,
+  ProductImage,
+  Product_title,
+  ProductCard,
+} from "../components"
 const HomeProduct = () => {
   const { products_loading, products_error, products } = useProductsContext()
   if (products_loading) return <Loading />
@@ -35,23 +40,15 @@ const HomeProduct = () => {
         <div className="container mx-auto px-5 xl:px-28 mt-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.slice(0, 8).map((product) => {
-              const { id, image, name, price } = product
+              const { id } = product
               return (
-                <Link to={`/shop/${id}`} key={id}>
-                  <article className=" space-y-4 ">
-                    <div className="bg-gray-100 ">
-                      <img
-                        src={image}
-                        alt={name}
-                        className="h-44 xl:h-80 object-cover object-center mix-blend-darken  p-8 "
-                      />
-                    </div>
-                    <div>
-                      <p className="text-gray-500 capitalize "> {name}</p>
-                      <p className="font-semibold"> {formatPrice(price)} </p>
-                    </div>
-                  </article>
-                </Link>
+                <article key={id} className=" space-y-4 group ">
+                  <ProductImage
+                    product={product}
+                    className="h-44 xl:h-80 p-8 "
+                  />
+                  <Product_title product={product} />
+                </article>
               )
             })}
           </div>

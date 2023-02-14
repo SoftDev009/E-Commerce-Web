@@ -23,8 +23,12 @@ import Grid_view_products from "./Grid_view_products"
 import List_view_products from "./List_view_products"
 import CartComponent from "./CartComponent"
 import AddToCart from "./AddToCart"
+import ProductImage from "./ProductImage"
+import Product_title from "./Product_title"
 
 export {
+  Product_title,
+  ProductImage,
   AddToCart,
   CartComponent,
   List_view_products,
