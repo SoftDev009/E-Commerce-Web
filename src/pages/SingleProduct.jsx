@@ -4,7 +4,13 @@ import { useProductsContext } from "../context/products_context"
 import { single_product_url as url } from "../utils/constants"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
-import { AddToCart, Error, Loading, ProductImages } from "../components"
+import {
+  AddToCart,
+  Error,
+  Loading,
+  ProductImages,
+  Breadcrumb,
+} from "../components"
 import { formatPrice } from "../utils/helper"
 
 const SingleProduct = () => {
@@ -39,6 +45,7 @@ const SingleProduct = () => {
   } = product
   return (
     <>
+      <Breadcrumb title={name} product />
       <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-10 my-10 xl:my-32 ">
         {/* Left */}
         <ProductImages images={images} />
