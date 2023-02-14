@@ -27,8 +27,10 @@ import ProductImage from "./ProductImage"
 import Product_title from "./Product_title"
 import View_button from "./View_button"
 import Order_summary from "./Order_summary"
+import Empty_cart from "./Empty_cart"
 
 export {
+  Empty_cart,
   Order_summary,
   View_button,
   Product_title,
