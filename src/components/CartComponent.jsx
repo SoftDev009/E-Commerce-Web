@@ -31,7 +31,7 @@ const CartComponent = () => {
               className="grid md:grid-cols-5 mt-5 border-b pb-6  "
             >
               {/* image */}
-              <div className="flex justify-center items-center col-span-2 space-x-4  ">
+              <div className="flex justify-center items-center col-span-2 space-x-4 ">
                 <ProductImage product={item} className="w-28 h-32" />
                 <div className=" h-full flex flex-col justify-between  ">
                   <p className=""> {name} </p>

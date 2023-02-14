@@ -68,7 +68,7 @@ const SingleProduct = () => {
             <div className="flex flex-col  items-start space-y-2">
               <h4 className="text-3xl font-medium"> {name} </h4>
               {/* stars */}
-              <div className="flex justify-center items-center space-x-2 border px-2 py-1 text-sm hover:cursor-pointer hover:border-black">
+              <div className="flex justify-center items-center space-x-2 border px-2 py-1 text-sm hover:cursor-pointer">
                 <p className="flex justify-center items-center font-semibold border-r-2 border-black  px-2 ">
                   <span className="flex justify-center items-center gap-[2px] mr-1 ">
                     {" "}
