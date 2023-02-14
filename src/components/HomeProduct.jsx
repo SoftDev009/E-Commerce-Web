@@ -49,15 +49,24 @@ const HomeProduct = () => {
         <div className="container mx-auto px-5 xl:px-28 mt-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.slice(0, 8).map((product) => {
-              // {products.map((product) => {
-              const { id } = product
+              const { id, sale, new_in_market } = product
               return (
-                <article key={id} className=" space-y-4 group ">
+                <article key={id} className=" relative space-y-4 group ">
                   <ProductImage
                     product={product}
                     className="h-44 xl:h-80 p-8 "
                   />
                   <Product_title product={product} />
+                  {sale && (
+                    <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-5 xl:-top-6 right-3 text-xs ">
+                      <p>Sale</p>
+                    </div>
+                  )}
+                  {new_in_market && (
+                    <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-5 xl:-top-6 right-3 text-xs ">
+                      <p>new</p>
+                    </div>
+                  )}
                 </article>
               )
             })}
