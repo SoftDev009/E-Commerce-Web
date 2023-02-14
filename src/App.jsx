@@ -8,30 +8,33 @@ import {
   Error,
   Checkout,
   ProtectedRoute,
+  AuthWrapper,
 } from "./pages"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/shop" element={<Products />} />
-        <Route path="/shop/:id" element={<SingleProduct />} />
-        <Route
-          path="/checkout"
-          element={
-            <ProtectedRoute>
-              {" "}
-              <Checkout />{" "}
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <AuthWrapper>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/shop" element={<Products />} />
+          <Route path="/shop/:id" element={<SingleProduct />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <Checkout />{" "}
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </AuthWrapper>
   )
 }
 
