@@ -1,5 +1,5 @@
 import React from "react"
-import { AiOutlineUserAdd } from "react-icons/ai"
+import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai"
 import { BsHandbag } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
@@ -7,16 +7,16 @@ import { AiOutlineMenu } from "react-icons/ai"
 import { Sidebar, Logo } from "../components"
 import { useProductsContext } from "../context/products_context"
 import { useCartContext } from "../context/cart_context"
+import { userUserContext } from "../context/user_context"
 
 const Navbar = () => {
   const { openSidebar, isSidebarOpen } = useProductsContext()
   const { total_items } = useCartContext()
+  const { loginWithRedirect, myUser, logout } = userUserContext()
   return (
     <>
       <nav className="bg-gray-100 py-4 xl:py-8">
         <div className="container mx-auto flex h-full items-center justify-between px-5 xl:max-w-screen-xl  xl:px-28">
-          {/* max-w-3xl */}
-
           {/* Logo */}
           <Logo />
           {/* Menu items */}
@@ -47,11 +47,22 @@ const Navbar = () => {
               </span>
             </Link>
             <div className="hidden flex-col-reverse items-center justify-center md:flex md:flex-row">
-              <button className="flex">
-                {" "}
-                Login
-                <AiOutlineUserAdd className="h-6 w-6" />
-              </button>
+              {myUser ? (
+                <button
+                  className="flex"
+                  onClick={() => logout({ returnTo: window.location.origin })}
+                >
+                  {" "}
+                  Logout
+                  <AiOutlineUserDelete className="h-6 w-6" />
+                </button>
+              ) : (
+                <button className="flex" onClick={loginWithRedirect}>
+                  {" "}
+                  Login
+                  <AiOutlineUserAdd className="h-6 w-6" />
+                </button>
+              )}
             </div>
           </div>
 

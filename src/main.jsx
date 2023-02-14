@@ -5,6 +5,7 @@ import App from "./App"
 import { CartProvider } from "./context/cart_context"
 import { FiltersProvider } from "./context/filter_context"
 import { ProductsProvider } from "./context/products_context"
+import { UserProvider } from "./context/user_context"
 import "./index.css"
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,13 +17,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       }}
       // cacheLocation="localStorage"
     >
-      <ProductsProvider>
-        <FiltersProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </FiltersProvider>
-      </ProductsProvider>
+      <UserProvider>
+        <ProductsProvider>
+          <FiltersProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </FiltersProvider>
+        </ProductsProvider>
+      </UserProvider>
     </Auth0Provider>
   </React.StrictMode>
 )
