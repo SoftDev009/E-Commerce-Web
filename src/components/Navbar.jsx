@@ -11,7 +11,7 @@ import { userUserContext } from "../context/user_context"
 
 const Navbar = () => {
   const { openSidebar, isSidebarOpen } = useProductsContext()
-  const { total_items } = useCartContext()
+  const { total_items, clearCart } = useCartContext()
   const { loginWithRedirect, myUser, logout } = userUserContext()
   return (
     <>
@@ -50,7 +50,10 @@ const Navbar = () => {
               {myUser ? (
                 <button
                   className="flex"
-                  onClick={() => logout({ returnTo: window.location.origin })}
+                  onClick={() => {
+                    clearCart()
+                    logout({ returnTo: window.location.origin })
+                  }}
                 >
                   {" "}
                   Logout

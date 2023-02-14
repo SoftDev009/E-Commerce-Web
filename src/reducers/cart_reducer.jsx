@@ -44,6 +44,10 @@ const cart_reducer = (state, action) => {
     const tempCart = state.cart.filter((item) => item.id !== id)
     return { ...state, cart: tempCart }
   }
+  // Clear Cart
+  if (action.type === CLEAR_CART) {
+    return { ...state, cart: [] }
+  }
   // Toggle amount
   if (action.type === TOGGLE_CART_ITEM_AMOUNT) {
     const { id, value } = action.payload
