@@ -6,10 +6,11 @@ import { navLinks } from "../utils/constants"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Sidebar, Logo } from "../components"
 import { useProductsContext } from "../context/products_context"
+import { useCartContext } from "../context/cart_context"
 
 const Navbar = () => {
   const { openSidebar, isSidebarOpen } = useProductsContext()
-
+  const { total_items } = useCartContext()
   return (
     <>
       <nav className="bg-gray-100 py-4 xl:py-8">
@@ -41,7 +42,7 @@ const Navbar = () => {
                 <BsHandbag className="relative ml-1 h-6 w-6" />{" "}
                 <span className="absolute -top-4 -right-3 rounded-full bg-[#48c4a0] px-2 text-white">
                   {" "}
-                  5{" "}
+                  {total_items}
                 </span>{" "}
               </span>
             </Link>
