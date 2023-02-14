@@ -1,32 +1,41 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { useProductsContext } from "../context/products_context"
-import {
-  Loading,
-  Error,
-  ProductImage,
-  Product_title,
-  ProductCard,
-} from "../components"
+import { Loading, Error, ProductImage, Product_title } from "../components"
+import { getUniqueValues } from "../utils/helper"
+import { useFilterContext } from "../context/filter_context"
+
 const HomeProduct = () => {
-  const { products_loading, products_error, products } = useProductsContext()
+  const { products_loading, products_error } = useProductsContext()
+  const {
+    filters: { category },
+    all_products,
+    updateFilters,
+    filtered_products: products,
+  } = useFilterContext()
   if (products_loading) return <Loading />
   if (products_error) return <Error />
+  const categories = getUniqueValues(all_products, "category")
   return (
     <>
       <section className="my-24">
         <div className="container hidden md:flex  items-center justify-between  mx-auto px-5 text-xs md:text-base xl:px-28  ">
           {/* Right buttons */}
-          <div className="space-x-14 font-bold ">
-            <button className="uppercase tracking-widest py-1">
-              Furniture
-            </button>
-            <button className="uppercase tracking-widest py-1">Lighting</button>
-            <button className="uppercase tracking-widest py-1">Sofas</button>
-            <button className="uppercase tracking-widest py-1">
-              Lounge Chairs
-            </button>
-            <button className="uppercase tracking-widest py-1">All</button>
+          <div className="space-x-14">
+            {categories.map((categoryButton, index) => {
+              return (
+                <button
+                  name="category"
+                  key={index}
+                  onClick={updateFilters}
+                  className={` uppercase tracking-widest py-1 font-medium ${
+                    category === categoryButton ? "text-green-600" : null
+                  } `}
+                >
+                  {categoryButton}
+                </button>
+              )
+            })}
           </div>
           {/* Left button */}
           <div className="space-x-2 text-xs  ">
@@ -40,6 +49,7 @@ const HomeProduct = () => {
         <div className="container mx-auto px-5 xl:px-28 mt-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.slice(0, 8).map((product) => {
+              // {products.map((product) => {
               const { id } = product
               return (
                 <article key={id} className=" space-y-4 group ">
