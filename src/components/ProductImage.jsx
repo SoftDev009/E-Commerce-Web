@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const ProductImage = ({ product, className }) => {
-  const { image, name } = product
+  const { image, name, id } = product
   return (
     <>
-      <Link>
+      <Link to={`/shop/${id}`}>
         <div className="bg-gray-100 ">
           <img
             src={image}

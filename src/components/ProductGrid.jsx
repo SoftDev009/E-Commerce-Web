@@ -1,5 +1,5 @@
 import React from 'react'
-import { CollectionProducts, Loading } from "../components"
+import { CollectionProducts } from "../components"
 import { useProductsContext } from "../context/products_context"
 
 const ProductGrid = () => {

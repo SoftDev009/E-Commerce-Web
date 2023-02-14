@@ -1,25 +1,18 @@
 import React from "react"
-import { formatPrice } from "../utils/helper"
-
+import { ProductImage, Product_title } from "../components"
 const Grid_view_products = ({ products }) => {
   return (
     <>
       <section className=" grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map((product) => {
-          const { id, name, image, price } = product
+          const { id } = product
           return (
-            <article key={id} className="space-y-6">
-              <div className=" bg-gray-100 ">
-                <img
-                  src={image}
-                  alt={name}
-                  className="w-full h-80 object-cover object-center mix-blend-darken p-8 "
-                />
-              </div>
-              <div className=" flex flex-col justify-center items-center space-y-1  ">
-                <p className=" font-medium  capitalize"> {name}</p>
-                <p className=" font-light  "> {formatPrice(price)} </p>
-              </div>
+            <article key={id} className="space-y-6 group ">
+              <ProductImage product={product} className=" w-full h-80 p-10 " />
+              <Product_title
+                product={product}
+                className=" flex flex-col justify-center items-center space-y-1  "
+              />
             </article>
           )
         })}

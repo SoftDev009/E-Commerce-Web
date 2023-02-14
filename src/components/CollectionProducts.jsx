@@ -1,7 +1,5 @@
 import React from "react"
-import { formatPrice } from "../utils/helper"
-import { ProductImage, Product_title, ProductCard } from "../components"
-import { Link } from "react-router-dom"
+import { ProductImage, Product_title } from "../components"
 
 const CollectionProducts = ({ products, title }) => {
   return (
@@ -13,7 +11,7 @@ const CollectionProducts = ({ products, title }) => {
         </h2>
         <hr className=" " />
         {products.slice(0, 3).map((product) => {
-          const { name, price, id } = product
+          const { id } = product
           return (
             <div key={id} className=" flex space-x-6 pt-8 md:pt-4 group  ">
               <ProductImage product={product} className="w-20 h-20 p-2 " />
