@@ -1,9 +1,9 @@
 import React from "react"
-import image1 from "../assets/testImage2.png"
 import { BiMinus, BiPlus } from "react-icons/bi"
 import { HiOutlineTrash } from "react-icons/hi"
 import { useCartContext } from "../context/cart_context"
 import { formatPrice } from "../utils/helper"
+import { ProductImage } from "../components"
 const CartComponent = () => {
   const { cart, removeItem, toggleAmount, total_amount, shipping_fee } =
     useCartContext()
@@ -24,7 +24,7 @@ const CartComponent = () => {
         </div>
         {/* Cart content */}
         {cart.map((item) => {
-          const { amount, color, id, image, name, price } = item
+          const { amount, color, id, name, price } = item
           return (
             <article
               key={id}
@@ -32,11 +32,7 @@ const CartComponent = () => {
             >
               {/* image */}
               <div className="flex justify-center items-center col-span-2 space-x-4  ">
-                <img
-                  src={image}
-                  alt={name}
-                  className="w-28 h-32 object-cover object-center bg-gray-100 "
-                />
+                <ProductImage product={item} className="w-28 h-32" />
                 <div className=" h-full flex flex-col justify-between  ">
                   <p className=""> {name} </p>
                   <p className="text-sm  uppercase flex items-center  ">
@@ -83,7 +79,7 @@ const CartComponent = () => {
           )
         })}
       </div>
-
+      {/* Order summary */}
       {/* Left */}
       <div className=" md:w-1/2 mb-5 md:mb-0 ">
         <div className=" font-medium  text-xl flex items-center py-2 capitalize tracking-widest">
