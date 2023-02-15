@@ -9,12 +9,12 @@ const Product_title = ({ product, className }) => {
       <div className={`${className}`}>
         <Link
           to={`/shop/${id}`}
-          className="text-gray-500 font-light capitalize transition-all duration-100 ease-linear "
+          className=" capitalize transition-all duration-100 ease-linear font-medium  "
         >
           {" "}
           {name}
         </Link>
-        <p className="font-semibold"> {formatPrice(price)} </p>
+        <p className="  font-light"> {formatPrice(price)} </p>
       </div>
     </>
   )

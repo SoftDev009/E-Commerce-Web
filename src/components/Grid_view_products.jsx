@@ -3,15 +3,18 @@ import { ProductImage, Product_title } from "../components"
 const Grid_view_products = ({ products }) => {
   return (
     <>
-      <section className=" grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className=" grid grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((product) => {
           const { id } = product
           return (
             <article key={id} className="space-y-6 group ">
-              <ProductImage product={product} className=" w-full h-80 p-10 " />
+              <ProductImage
+                product={product}
+                className=" h-40 md:h-56 xl:h-80  p-2 md:p-4 xl:p-8 "
+              />
               <Product_title
                 product={product}
-                className=" flex flex-col justify-center items-center space-y-1  "
+                className=" flex flex-col space-y-1  "
               />
             </article>
           )

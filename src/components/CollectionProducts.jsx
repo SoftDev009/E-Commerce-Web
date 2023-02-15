@@ -13,7 +13,10 @@ const CollectionProducts = ({ products, title }) => {
         {products.slice(0, 3).map((product) => {
           const { id } = product
           return (
-            <div key={id} className=" flex space-x-6 pt-8 md:pt-4 group  ">
+            <div
+              key={id}
+              className=" flex flex-row space-x-5 pt-8 md:pt-4 group  "
+            >
               <ProductImage product={product} className="w-20 h-20 p-2 " />
               <Product_title product={product} />
             </div>

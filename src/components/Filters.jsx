@@ -27,7 +27,10 @@ const Filters = () => {
     <aside className=" w-1/3 p-8  space-y-8 hidden lg:flex flex-col sticky top-0 font-light border  h-full      ">
       <div className="flex justify-between">
         <h2 className="text-2xl uppercase ">Filter by</h2>
-        <button className="text-sm text-green-600 " onClick={clearFilters}>
+        <button
+          className="text-sm text-primary capitalize "
+          onClick={clearFilters}
+        >
           Clear all
         </button>
       </div>
@@ -54,7 +57,7 @@ const Filters = () => {
                 name="category"
                 onClick={updateFilters}
                 className={`capitalize text-lg ${
-                  category === categoryButton ? "text-green-600" : null
+                  category === categoryButton ? "text-primary" : null
                 } `}
               >
                 {categoryButton}
@@ -144,7 +147,7 @@ const Filters = () => {
         />
         <label
           htmlFor="shipping"
-          className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
+          className="  py-2 group-hover:text-primary transition-all duration-200 ease-linear cursor-pointer select-none "
         >
           {" "}
           shipping{" "}

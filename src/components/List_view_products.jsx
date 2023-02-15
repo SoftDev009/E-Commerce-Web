@@ -8,11 +8,17 @@ const List_view_products = ({ products }) => {
         {products.map((product) => {
           const { id, description } = product
           return (
-            <article key={id} className=" flex flex-row gap-10 group ">
-              <ProductImage product={product} className="w-96 h-80 p-10 " />
-              <div className=" w-full ">
+            <article
+              key={id}
+              className=" flex flex-col md:flex-row md:gap-10 group space-y-4 md:space-y-0  "
+            >
+              <ProductImage
+                product={product}
+                className="h-72 md:h-60 md:w-72 lg:w-80 xl:w-96 md:p-4 xl:h-80 p-8 "
+              />
+              <div className=" w-full space-y-4  ">
                 <Product_title product={product} className="w-full" />
-                <p className="  mt-10 "> {description} </p>
+                <p className="  md:mt-10 "> {description} </p>
               </div>
             </article>
           )

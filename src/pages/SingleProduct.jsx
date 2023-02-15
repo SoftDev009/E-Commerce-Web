@@ -22,9 +22,9 @@ const SingleProduct = () => {
   } = useProductsContext()
   const { id } = useParams()
 
-  useEffect(() => {
-    fetchSingleProduct(`${url}${id}`)
-  }, [id])
+  // useEffect(() => {
+  //   fetchSingleProduct(`${url}${id}`)
+  // }, [id])
 
   if (loading) return <Loading />
   if (error) return <Error />
@@ -46,14 +46,14 @@ const SingleProduct = () => {
   return (
     <>
       <Breadcrumb title={name} product />
-      <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-10 my-10 xl:my-32 ">
+      <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-16 my-10 xl:my-32  ">
         {/* Left */}
         <ProductImages images={images} />
 
         {/* Right */}
         <div className="">
-          <section className=" space-y-6 flex flex-col  justify-between ">
-            <div className=" ">
+          <section className=" space-y-6 flex flex-col  justify-between  ">
+            <div>
               {stock > 0 ? (
                 <span className="  text-green-500 font-medium border px-4 py-2 border-green-500 text-center text-xs capitalize rounded ">
                   In stock
@@ -69,7 +69,7 @@ const SingleProduct = () => {
               <h4 className="text-3xl font-medium"> {name} </h4>
               {/* stars */}
               <div className="flex justify-center items-center space-x-2 border px-2 py-1 text-sm hover:cursor-pointer">
-                <p className="flex justify-center items-center font-semibold border-r-2 border-black  px-2 ">
+                <p className="flex font-semibold border-r-2 border-black  px-2 ">
                   <span className="flex justify-center items-center gap-[2px] mr-1 ">
                     {" "}
                     <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
@@ -102,7 +102,9 @@ const SingleProduct = () => {
               </h5>
             </div>
             <AddToCart product={product} />
-            <hr />
+            <div className=" pt-8 ">
+              <hr />
+            </div>
           </section>
         </div>
       </div>

@@ -6,7 +6,7 @@ const ProductImage = ({ product, className }) => {
   return (
     <>
       <Link to={`/shop/${id}`}>
-        <div className="bg-gray-100 ">
+        <div className="bg-gray-100 border border-gray-200/50 flex justify-center items-center  ">
           <img
             src={image}
             alt={name}

@@ -5,12 +5,12 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
   const [main, setMain] = useState(images[0])
   return (
     <>
-      <section className=" space-y-4 w-4/5  ">
+      <section className=" space-y-4 w4/5  ">
         <div className=" bg-gray-100   ">
           <img
             src={main.url}
             alt="product"
-            className="h-72 xl:h-full  w-full object-cover object-center border mix-blend-darken p20 "
+            className="h-72 xl:h-full w-full object-cover object-center border mix-blend-darken p-8 "
           />
         </div>
         <div className="flex gap-3 ">
@@ -21,8 +21,8 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
                   src={image.url}
                   alt={image.filename}
                   onClick={() => setMain(images[index])}
-                  className={`w-20 h-20 md:w-36 md:h-32 mix-blend-multiply  object-cover object-center border ${
-                    image.url === main.url ? "border-green-400 border" : null
+                  className={`w-20 h-20 md:w-36 md:h-32 mix-blend-multiply p-4  object-cover object-center border ${
+                    image.url === main.url ? "border-primary border-2" : null
                   } `}
                 />
               </div>

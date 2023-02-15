@@ -16,7 +16,6 @@ import AllProducts from "./AllProducts"
 import Filters from "./Filters"
 import Loading from "./Loading"
 import Error from "./Error"
-import SingleProduct from "./SingleProduct"
 import ProductImages from "./ProductImages"
 import Sort from "./Sort"
 import Grid_view_products from "./Grid_view_products"
@@ -45,7 +44,6 @@ export {
   Grid_view_products,
   Sort,
   ProductImages,
-  SingleProduct,
   Error,
   Loading,
   Filters,

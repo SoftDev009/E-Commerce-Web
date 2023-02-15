@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { BsCheck } from "react-icons/bs"
-import { HiOutlineShoppingCart } from "react-icons/hi"
+import { BsCheck, BsCart2 } from "react-icons/bs"
+
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useCartContext } from "../context/cart_context"
 import { Link } from "react-router-dom"
@@ -37,7 +37,7 @@ const AddToCart = ({ product }) => {
     <>
       <section className=" space-y-10 ">
         {/* colors */}
-        <div className="flex space-x-4">
+        <div className="flex items-center space-x-4">
           <span className=" text-sm text-gray-500 uppercase w-20  ">
             Color :
           </span>
@@ -73,8 +73,8 @@ const AddToCart = ({ product }) => {
               type="number"
               min={1}
               max={10}
-              // value={amount}
-              className=" w-16 h-[50px] text-center outline-none border-gray-200 focus:ring-0 focus-within:ring-green-300 focus:outline-none focus:border-gray-200"
+              value={amount}
+              className=" w-16 h-[50px] text-center outline-none border-gray-200 focus:ring-0 focus:border-gray-200"
               aria-label="Quantity"
             />
             <span className=" absolute flex flex-col justify-center items-center -right-[23px] space-y-[0.5px] border  h-[50px] w-6 ">
@@ -100,12 +100,12 @@ const AddToCart = ({ product }) => {
         <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center">
           <Link
             to="/cart"
-            className="flex justify-center items-center bg-black text-sm uppercase tracking-wider text-white py-4 px-16 hover:bg-green-500  "
+            className=" flex bg-black text-sm uppercase tracking-wider text-white py-4 px-16 hover:bg-primary  "
             onClick={() => addToCart(id, mainColor, amount, product)}
           >
             <span>
               {" "}
-              <HiOutlineShoppingCart className="w-5 h-5 mr-2 " />{" "}
+              <BsCart2 className="w-6 h-4 mr-1 " />{" "}
             </span>
             Add to Cart
           </Link>

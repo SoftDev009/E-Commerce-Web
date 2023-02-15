@@ -18,7 +18,7 @@ const HomeProduct = () => {
   const categories = getUniqueValues(all_products, "category")
   return (
     <>
-      <section className="my-24">
+      <section className=" md:mt-28 mt-20 ">
         <div className="container hidden md:flex  items-center justify-between  mx-auto px-5 text-xs md:text-base xl:px-28  ">
           {/* Right buttons */}
           <div className="space-x-14">
@@ -29,7 +29,7 @@ const HomeProduct = () => {
                   key={index}
                   onClick={updateFilters}
                   className={` uppercase tracking-widest py-1 font-medium ${
-                    category === categoryButton ? "text-green-600" : null
+                    category === categoryButton ? "text-primary" : null
                   } `}
                 >
                   {categoryButton}
@@ -51,19 +51,19 @@ const HomeProduct = () => {
             {products.slice(0, 8).map((product) => {
               const { id, sale, new_in_market } = product
               return (
-                <article key={id} className=" relative space-y-4 group ">
+                <article key={id} className=" relative space-y-5 group ">
                   <ProductImage
                     product={product}
-                    className="h-44 xl:h-80 p-8 "
+                    className="h-40 lg:h-44 xl:h-80 p-4 md:p-5 xl:p-8 "
                   />
                   <Product_title product={product} />
                   {sale && (
-                    <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-5 xl:-top-6 right-3 text-xs ">
+                    <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-7 right-3 text-xs ">
                       <p>Sale</p>
                     </div>
                   )}
                   {new_in_market && (
-                    <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-5 xl:-top-6 right-3 text-xs ">
+                    <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-7 right-3 text-xs ">
                       <p>new</p>
                     </div>
                   )}
@@ -77,7 +77,7 @@ const HomeProduct = () => {
             <div className=" border-b bg-gray-600 w-2/3 xl:w-2/5"></div>
             <Link
               to="/shop"
-              className=" text-center uppercase tracking-wider border border-green-500 py-3 text-gray-700 font-medium text-sm xl:text-base w-full md:w-1/2 xl:w-1/6"
+              className=" text-center uppercase tracking-wider border border-primary py-3 text-gray-700 font-medium text-sm xl:text-base w-full md:w-1/2 xl:w-1/6"
             >
               Go to shop
             </Link>

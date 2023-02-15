@@ -7,7 +7,7 @@ const ProductGrid = () => {
     useProductsContext()
 
   return (
-    <section className="container mx-auto gap-10 px-5 xl:px-28 grid grid-cols-1 md:grid-cols-3 capitalize place-items-center mt-20 ">
+    <section className="container mx-auto gap-10 px-5 xl:px-28 grid grid-cols-1 md:grid-cols-3 capitalize place-items-center mt-20 md:mt-28 ">
       {/* Bestseller */}
       <CollectionProducts products={bestSeller_products} title="Best seller" />
 

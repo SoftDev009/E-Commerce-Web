@@ -13,7 +13,7 @@ const ProductCategory = () => {
 
   return (
     <>
-      <section className="mt-28">
+      <section className=" mt-20 md:mt-28">
         <div className="container mx-auto px-5 xl:px-28 py-2">
           <CategoryProducts
             products={all_Decoration_products}
