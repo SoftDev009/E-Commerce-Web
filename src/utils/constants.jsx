@@ -9,6 +9,16 @@ export const navLinks = [
     title: "shop",
     url: "/shop",
   },
+  {
+    id: 3,
+    title: "product",
+    url: "/shop",
+  },
+  {
+    id: 4,
+    title: "contact",
+    url: "",
+  },
 ]
 
 export const products_url = ".netlify/functions/products"

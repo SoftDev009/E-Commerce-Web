@@ -9,7 +9,7 @@ const Product_title = ({ product, className }) => {
       <div className={`${className}`}>
         <Link
           to={`/shop/${id}`}
-          className="text-gray-500 font-light capitalize transition-all duration-100 ease-linear group-hover:text-primary "
+          className="text-gray-500 font-light capitalize transition-all duration-100 ease-linear "
         >
           {" "}
           {name}
