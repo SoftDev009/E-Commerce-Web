@@ -7,8 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-functions
-functions*/single-product.js
+# functions
+# functions*/single-product.js
 .env
 node_modules
 dist
