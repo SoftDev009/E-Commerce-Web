@@ -14,7 +14,6 @@ import { formatPrice } from "../utils/helper"
 import { useNavigate } from "react-router-dom"
 import CardStyle from "../app.css"
 const promise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
-console.log(promise)
 
 const CheckoutForm = () => {
   const { cart, total_amounts, shipping_fee, clearCart } = useCartContext()

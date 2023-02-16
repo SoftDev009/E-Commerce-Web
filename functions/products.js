@@ -1,15 +1,15 @@
-const dotenv = require("dotenv")
+import dotenv from "dotenv"
 dotenv.config()
 
 const Airtable = require("airtable-node")
 
-const airtable = new Airtable({ apiKey: import.meta.env.VITE_AIRTABLE_API_KEY })
-  .base(import.meta.env.VITE_AIRTABLE_API_KEY)
-  .table(import.meta.env.VITE_AIRTABLE_TABLE)
+const airtable = new Airtable({ apiKey: process.env.VITE_AIRTABLE_API_KEY })
+  .base(process.env.VITE_AIRTABLE_API_KEY)
+  .table(process.env.VITE_AIRTABLE_TABLE)
 
 exports.handler = async () => {
   try {
-    const response = await airtable.list({ maxRecords: 20 })
+    const response = await airtable.list({ maxRecords: 200 })
 
     const products = response.records.map((product) => {
       const { id, fields } = product
