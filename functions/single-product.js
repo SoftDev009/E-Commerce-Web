@@ -4,10 +4,9 @@ dotenv.config()
 const Airtable = require("airtable-node")
 
 const airtable = new Airtable({ apiKey: process.env.VITE_AIRTABLE_API_KEY })
-  .base(process.env.VITE_AIRTABLE_API_KEY)
+  .base(process.env.VITE_AIRTABLE_BASE)
   .table(process.env.VITE_AIRTABLE_TABLE)
 
-console.log(import.meta.env.VITE_AIRTABLE_API_KEY)
 exports.handler = async (event, context, cb) => {
   const { id } = event.queryStringParameters
   if (id) {

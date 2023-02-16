@@ -74,6 +74,7 @@ const AddToCart = ({ product }) => {
               min={1}
               max={10}
               value={amount}
+              onChange={(e) => setAmount(e.target.value)}
               className=" w-16 h-[50px] text-center outline-none border-gray-200 focus:ring-0 focus:border-gray-200"
               aria-label="Quantity"
             />

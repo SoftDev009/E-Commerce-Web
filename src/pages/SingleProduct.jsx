@@ -22,9 +22,9 @@ const SingleProduct = () => {
   } = useProductsContext()
   const { id } = useParams()
 
-  // useEffect(() => {
-  //   fetchSingleProduct(`${url}${id}`)
-  // }, [id])
+  useEffect(() => {
+    fetchSingleProduct(`${url}${id}`)
+  }, [id])
 
   if (loading) return <Loading />
   if (error) return <Error />
