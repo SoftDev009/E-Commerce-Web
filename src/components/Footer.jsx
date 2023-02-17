@@ -137,7 +137,7 @@
                         alt={title}
                         className="w-20 h-12 object-cover object-center"
                       />
-                      <div className="space-y-1 capitalize ">
+                      <div className=" capitalize ">
                         <a href="#" className="text-sm hover:text-white/80 ">
                           {title}
                         </a>

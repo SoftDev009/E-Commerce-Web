@@ -1,22 +1,28 @@
 import React from "react"
 import { useState } from "react"
 
-const ProductImages = ({ images = [{ url: "" }] }) => {
+const ProductImages = ({ product, images = [{ url: "" }] }) => {
   const [main, setMain] = useState(images[0])
   return (
     <>
-      <section className=" space-y-4 w4/5  ">
-        <div className=" bg-gray-100   ">
+      <section className={` space-y-4 `}>
+        <div className=" relative  bg-gray-100   ">
           <img
             src={main.url}
             alt="product"
-            className="h-72 xl:h-full w-full object-cover object-center border mix-blend-darken p-8 "
+            className="h-full xl:h-full w-full object-cover object-center border mix-blend-darken p-8 "
           />
+          {product.stock === 0 && (
+            <div className=" absolute bg-black/30 w-full h-full top-0 grid place-items-center text-3xl text-gray-200  capitalize select-none  ">
+              {" "}
+              <p> Out of stock </p>{" "}
+            </div>
+          )}
         </div>
         <div className="flex gap-3 ">
           {images.map((image, index) => {
             return (
-              <div key={index} className=" bg-gray-100 ">
+              <div key={index} className=" bg-gray-100   ">
                 <img
                   src={image.url}
                   alt={image.filename}

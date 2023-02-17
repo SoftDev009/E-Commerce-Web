@@ -48,7 +48,7 @@ const SingleProduct = () => {
       <Breadcrumb title={name} product />
       <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-16 my-10 xl:my-32  ">
         {/* Left */}
-        <ProductImages images={images} />
+        <ProductImages product={product} images={images} />
 
         {/* Right */}
         <div className="">
@@ -101,7 +101,7 @@ const SingleProduct = () => {
                 </span>{" "} */}
               </h5>
             </div>
-            <AddToCart product={product} />
+            {stock >= 1 && <AddToCart product={product} />}
             <div className=" pt-8 ">
               <hr />
             </div>

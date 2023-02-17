@@ -10,7 +10,7 @@ const ProductImage = ({ product, className }) => {
           <img
             src={image}
             alt={name}
-            className={` ${className}  object-cover object-center mix-blend-darken transition-all duration-300 delay-75 ease-linear group-hover:scale-110 `}
+            className={` ${className}  object-cover object-center mix-blend-darken transition-all duration-300 delay-75 ease-linear group-hover:scale-110  `}
           />
         </div>
       </Link>

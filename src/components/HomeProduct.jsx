@@ -58,12 +58,12 @@ const HomeProduct = () => {
                   />
                   <Product_title product={product} />
                   {sale && (
-                    <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-7 right-3 text-xs ">
+                    <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-3 px-2  py-[2px] -top-7 right-3 text-[8px] xl:text-xs">
                       <p>Sale</p>
                     </div>
                   )}
                   {new_in_market && (
-                    <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-7 right-3 text-xs ">
+                    <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-3 px-2  py-[2px] -top-7 right-3 text-[8px] xl:text-xs ">
                       <p>new</p>
                     </div>
                   )}

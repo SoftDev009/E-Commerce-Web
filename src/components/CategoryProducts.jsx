@@ -11,14 +11,14 @@ const CategoryProducts = ({ products, category_name }) => {
             <h4 className="text-4xl tracking-wider capitalize ">
               {category_name}
             </h4>
-            <p className="text-sm font-light tracking-wider text-gray-400">
+            <p className="text-sm font-light tracking-wider text-gray-600  ">
               Small be and the rain would phase distance, succeed align.
             </p>
             <View_button title="shop now" />
           </div>
         </article>
         {products.slice(0, 3).map((product) => {
-          const { name, price, id, new_in_market, sale } = product
+          const { id, new_in_market, sale } = product
           return (
             <article
               key={id}
@@ -27,12 +27,12 @@ const CategoryProducts = ({ products, category_name }) => {
               <ProductImage product={product} className=" h-80 xl:h-96 p-8 " />
               <Product_title product={product} />
               {sale && (
-                <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-8 right-3 text-xs ">
+                <div className="absolute uppercase tracking-wider bg-red-500 text-gray-100 xl:px-3 px-2  py-[2px] -top-7 right-3 text-[8px] xl:text-xs ">
                   <p>Sale</p>
                 </div>
               )}
               {new_in_market && (
-                <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-4 px-2 xl:py-[0.16rem] py-1 -top-7 xl:-top-8 right-3 text-xs ">
+                <div className="absolute uppercase tracking-wider bg-green-500 text-gray-100 xl:px-3 px-2  py-[2px] -top-7 right-3 text-[8px] xl:text-xs ">
                   <p>new</p>
                 </div>
               )}

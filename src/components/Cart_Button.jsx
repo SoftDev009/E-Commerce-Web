@@ -16,7 +16,7 @@ const Cart_Button = () => {
         >
           {" "}
           <BsCart2 className="relative ml-1 h-6 w-6 " />{" "}
-          <span className="absolute -top-2 -right-3 flex justify-center items-center bg-primary w-4 h-4 rounded-full shadow-md  text-white text-xs  ">
+          <span className="absolute -top-2 -right-3 flex justify-center items-center bg-primary w-5 h-5 rounded-full shadow-md  text-white text-xs  ">
             {" "}
             {total_items}
           </span>
