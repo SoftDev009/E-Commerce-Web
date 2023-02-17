@@ -5,6 +5,7 @@ import {
   Error,
   Grid_view_products,
   List_view_products,
+  NotFound,
 } from "../components"
 import { useFilterContext } from "../context/filter_context"
 
@@ -14,7 +15,6 @@ const AllProducts = () => {
 
   if (products_loading) return <Loading />
   if (products_error) return <Error />
-  if (products.length < 1) return <p> No products found. </p>
   if (grid_view === false) return <List_view_products products={products} />
 
   return (

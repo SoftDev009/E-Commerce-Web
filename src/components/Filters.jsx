@@ -1,6 +1,7 @@
 import React from "react"
 import { useFilterContext } from "../context/filter_context"
 import { formatPrice, getUniqueValues } from "../utils/helper"
+import { BsSearch } from "react-icons/bs"
 
 const Filters = () => {
   const {
@@ -36,15 +37,16 @@ const Filters = () => {
       </div>
 
       {/* Search Product */}
-      <div className="">
+      <div className="relative text-gray-500 focus-within:text-black">
         <input
           type="text"
           name="text"
           placeholder="Search product..."
-          className=" w-full "
+          className=" w-full border-gray-200 rounded-md  focus:border-primary ring-0 focus:ring-0  "
           value={text}
           onChange={updateFilters}
         />
+        <BsSearch className=" absolute top-3 right-0 mr-5 h-4 w-4 pointer-events-none " />
       </div>
 
       {/* Categories */}
@@ -55,6 +57,7 @@ const Filters = () => {
             <div className="flex " key={index}>
               <button
                 name="category"
+                id="category"
                 onClick={updateFilters}
                 className={`capitalize text-lg ${
                   category === categoryButton ? "text-primary" : null
@@ -63,39 +66,18 @@ const Filters = () => {
                 {categoryButton}
               </button>
             </div>
-            // <div
-            //   key={index}
-            //   className="flex items-center space-x-5 capitalize group "
-            // >
-            //   <input
-            //     type="checkbox"
-            //     // name={category}
-            //     name="category"
-            //     id={category}
-            //     className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
-            //     onChange={(e) => console.log(e.target.value)}
-            //     // onChange={updateFilters}
-            //   />
-            //   <label
-            //     htmlFor={category}
-            //     className="  py-2 group-hover:text-green-600 transition-all duration-200 ease-linear cursor-pointer select-none "
-            //   >
-            //     {" "}
-            //     {category}{" "}
-            //   </label>
-            // </div>
           )
         })}
       </div>
 
-      {/* company */}
+      {/* company / Brand */}
       <div className=" space-y-2 ">
         <h2 className=" capitalize font-medium tracking-wider">Brand</h2>
         <select
           name="company"
           value={company}
           onChange={updateFilters}
-          className=" capitalize "
+          className=" capitalize rounded-md border-gray-200 focus:border-primary focus:ring-0  "
         >
           {companies.map((companyOption, index) => {
             return (

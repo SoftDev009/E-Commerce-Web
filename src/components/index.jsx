@@ -29,8 +29,10 @@ import Order_summary from "./Order_summary"
 import Empty_cart from "./Empty_cart"
 import Stripe_Checkout from "./Stripe_Checkout"
 import Cart_Button from "./Cart_Button"
+import NotFound from "./NotFound"
 
 export {
+  NotFound,
   Cart_Button,
   Stripe_Checkout,
   Empty_cart,

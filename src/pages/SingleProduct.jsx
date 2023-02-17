@@ -24,6 +24,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
+    window.scrollTo(0, 0)
   }, [id])
 
   if (loading) return <Loading />

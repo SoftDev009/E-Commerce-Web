@@ -13,7 +13,7 @@ const Empty_cart = () => {
         </p>
         <Link
           to="/shop"
-          className=" mt-10 uppercase text-primary border border-primary px-16 py-2 font-medium  "
+          className=" mt-10 uppercase text-primary border border-primary px-16 py-2 font-medium hover:bg-green-100/50  "
         >
           {" "}
           Add items{" "}

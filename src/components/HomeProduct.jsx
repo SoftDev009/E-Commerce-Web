@@ -19,17 +19,17 @@ const HomeProduct = () => {
   return (
     <>
       <section className=" md:mt-28 mt-20 ">
-        <div className="container hidden md:flex  items-center justify-between  mx-auto px-5 text-xs md:text-base xl:px-28  ">
+        <div className="container mx-auto px-5 text-xs md:text-base xl:px-28  ">
           {/* Right buttons */}
-          <div className="space-x-14">
+          <div className="md:space-x-14 space-x-5 flex overflow-auto snap-x scrollbar-hide  ">
             {categories.map((categoryButton, index) => {
               return (
                 <button
                   name="category"
                   key={index}
                   onClick={updateFilters}
-                  className={` uppercase tracking-widest py-1 font-medium ${
-                    category === categoryButton ? "text-primary" : null
+                  className={` snap-start text-start uppercase tracking-widest font-medium ${
+                    category === categoryButton ? "text-primary " : null
                   } `}
                 >
                   {categoryButton}
@@ -38,12 +38,12 @@ const HomeProduct = () => {
             })}
           </div>
           {/* Left button */}
-          <div className="space-x-2 text-xs  ">
+          {/* <div className="space-x-2 text-xs  ">
             <button className="uppercase tracking-widest border-r pr-2 border-black">
               Back
             </button>
             <button className="uppercase tracking-widest">Next</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="container mx-auto px-5 xl:px-28 mt-10">
