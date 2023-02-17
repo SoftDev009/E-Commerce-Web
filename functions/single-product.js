@@ -1,7 +1,8 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-const Airtable = require("airtable-node")
+import Airtable from "airtable-node"
+
 
 const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
   .base(process.env.AIRTABLE_BASE)
