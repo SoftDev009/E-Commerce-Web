@@ -29,7 +29,7 @@ const Filters = () => {
       <div className="flex justify-between">
         <h2 className="text-2xl uppercase ">Filter by</h2>
         <button
-          className="text-sm text-primary capitalize "
+          className="text-sm text-primary capitalize"
           onClick={clearFilters}
         >
           Clear all

@@ -80,6 +80,7 @@ const AddToCart = ({ product }) => {
             />
             <span className=" absolute flex flex-col justify-center items-center -right-[23px] space-y-[0.5px] border  h-[50px] w-6  ">
               <button
+                title="Increase"
                 className={`border-b w-full h-full flex flex-col justify-center items-center hover:bg-black`}
                 onClick={increaseAmount}
               >
@@ -87,6 +88,7 @@ const AddToCart = ({ product }) => {
                 <BiChevronUp className=" w-4 h-4 text-gray-500   hover:text-white" />{" "}
               </button>
               <button
+                title="Decrease"
                 className=" border-t w-full h-full flex flex-col justify-center items-center hover:bg-black "
                 onClick={decreaseAmount}
               >

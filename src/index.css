@@ -13,6 +13,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+.photo:active .photo-info {
+  transform: translateY(0)
+}
   }
 
 
