@@ -30,8 +30,10 @@ import Empty_cart from "./Empty_cart"
 import Stripe_Checkout from "./Stripe_Checkout"
 import Cart_Button from "./Cart_Button"
 import NotFound from "./NotFound"
+import Exclusive_Products from "./Exclusive_Products"
 
 export {
+  Exclusive_Products,
   NotFound,
   Cart_Button,
   Stripe_Checkout,

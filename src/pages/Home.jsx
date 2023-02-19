@@ -1,6 +1,7 @@
 import React from "react"
 import {
   BasketProduct,
+  Exclusive_Products,
   Header,
   HomeProduct,
   Instagram,
@@ -16,6 +17,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      {/* <Exclusive_Products /> */}
       <HomeProduct />
       <BasketProduct />
       <ProductGrid />
