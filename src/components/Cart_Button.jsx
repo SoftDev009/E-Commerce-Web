@@ -1,11 +1,11 @@
+import { useAuth0 } from "@auth0/auth0-react"
 import React from "react"
 import { BsCart2, BsPersonPlus, BsPersonDash } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { useCartContext } from "../context/cart_context"
-import { userUserContext } from "../context/user_context"
 
 const Cart_Button = () => {
-  const { myUser, loginWithRedirect, logout } = userUserContext()
+  const { user, loginWithRedirect, logout } = useAuth0()
   const { total_items, clearCart } = useCartContext()
   return (
     <>
@@ -22,18 +22,18 @@ const Cart_Button = () => {
           </span>
         </Link>
         <div className="flex-col-reverse items-center justify-center md:flex md:flex-row ">
-          {myUser ? (
+          {user ? (
             <button
               className="flex hover:text-primary "
               onClick={() => {
                 clearCart()
-                logout({ returnTo: window.location.origin })
+                logout({ logoutParams: { returnTo: window.location.origin } })
               }}
             >
               <BsPersonDash className="h-6 w-6" />
             </button>
           ) : (
-            <button className="flex" onClick={loginWithRedirect}>
+            <button className="flex" onClick={() => loginWithRedirect()}>
               <BsPersonPlus className="h-6 w-6" />
             </button>
           )}
