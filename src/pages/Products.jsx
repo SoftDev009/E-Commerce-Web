@@ -25,13 +25,11 @@ const Products = () => {
             <FaFilter className=" fill-white " />{" "}
           </button>
         </div>
-        {isOpen && (
-          <div className=" photo-info translate-x-full transform absolute bg-red-200  ">
-            <p>item1</p>
-            <p>item1</p>
-            <p>item1</p>
+        {/* {isOpen && (
+          <div className=" photo-info translate-x-full transform absolute bg-gray-100 ">
+            <p>filter: coming soon</p>
           </div>
-        )}
+        )} */}
       </section>
     </>
   )
