@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { BsCheck, BsCart2 } from "react-icons/bs"
-
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useCartContext } from "../context/cart_context"
 import { Link } from "react-router-dom"
@@ -98,7 +97,6 @@ const AddToCart = ({ product }) => {
             </span>
           </div>
         </div>
-
         {/* Add to cart Buttons */}
         <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center">
           <Link

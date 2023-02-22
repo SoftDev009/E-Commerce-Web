@@ -4,11 +4,11 @@ import { formatPrice } from "../utils/helper"
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react"
 const Order_summary = () => {
-  const { total_amount, shipping_fee } = useCartContext()
+  const { total_amount, shipping_fee, total_items } = useCartContext()
   const { user, loginWithRedirect } = useAuth0()
   return (
     <>
-      <section className=" md:w-1/2 mb-5 md:mb-0 ">
+      <section className=" md:w-full lg:w-1/2 mb-5 md:mb-0  ">
         <h4 className="font-medium  text-xl flex items-center py-2 capitalize tracking-widest">
           Order summary
         </h4>
@@ -23,13 +23,13 @@ const Order_summary = () => {
           </h5>
           <h5 className="flex justify-between items-center">
             Bag discount{" "}
-            <span className=" text-primary text-lg"> {formatPrice(100)} </span>{" "}
+            <span className=" text-primary text-lg"> {formatPrice(-100)} </span>{" "}
           </h5>
           <h5 className="flex justify-between items-center">
-            Delivery Fee{" "}
+            Convenience Fee{" "}
             <span className=" text-lg text-primary">
-              Free{" "}
-              <span className="text-black line-through text-sm">
+              {/* Free{" "} */}
+              <span className="text-black text-sm">
                 {" "}
                 {formatPrice(shipping_fee)}
               </span>{" "}
@@ -43,17 +43,27 @@ const Order_summary = () => {
           </span>{" "}
         </h5>
         {user ? (
-          <button className="bg-black w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary transition-all duration-300 ease-linear ">
-            <Link to="/checkout">Proceed to Checkout</Link>
+          <button className="bg-primary w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary/80 transition-all duration-300 ease-linear ">
+            <Link to="/checkout">
+              Proceed to buy{" "}
+              <span className="  capitalize ">
+                {" "}
+                ({total_items} item{total_items > 1 && "s"} ){" "}
+              </span>
+            </Link>
           </button>
         ) : (
           <button
             onClick={loginWithRedirect}
             type="button"
-            className="bg-black w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary transition-all duration-300 ease-linear"
+            className="bg-primary w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 ease-linear"
           >
             {" "}
-            Login to checkout{" "}
+            Login to buy{" "}
+            <span className="  capitalize ">
+              {" "}
+              ({total_items} item{total_items > 1 && "s"} ){" "}
+            </span>
           </button>
         )}
       </section>
