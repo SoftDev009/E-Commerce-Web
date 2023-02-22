@@ -31,8 +31,10 @@ import Cart_Button from "./Cart_Button"
 import NotFound from "./NotFound"
 import Exclusive_Products from "./Exclusive_Products"
 import CartItems from "./CartItems"
+import Stars from "./Stars"
 
 export {
+  Stars,
   CartItems,
   Exclusive_Products,
   NotFound,

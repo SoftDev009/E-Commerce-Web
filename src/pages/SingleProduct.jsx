@@ -1,15 +1,16 @@
 import React from "react"
-import { BsStarFill } from "react-icons/bs"
 import { useProductsContext } from "../context/products_context"
 import { single_product_url as url } from "../utils/constants"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
+
 import {
   AddToCart,
   Error,
   Loading,
   ProductImages,
   Breadcrumb,
+  Stars,
 } from "../components"
 import { formatPrice } from "../utils/helper"
 
@@ -69,20 +70,7 @@ const SingleProduct = () => {
             <div className="flex flex-col  items-start space-y-2">
               <h4 className="text-3xl font-medium"> {name} </h4>
               {/* stars */}
-              <div className="flex justify-center items-center space-x-2 border px-2 py-1 text-sm hover:cursor-pointer">
-                <p className="flex font-semibold border-r-2 border-black  px-2 ">
-                  <span className="flex justify-center items-center gap-[2px] mr-1 ">
-                    {" "}
-                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
-                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
-                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
-                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
-                    <BsStarFill className="w-3 h-3 text-[#48c4a0]" />{" "}
-                  </span>{" "}
-                  {stars}
-                </p>
-                <p className="text-gray-500">{reviews} Reviews</p>
-              </div>
+              <Stars stars={stars} reviews={reviews} />
             </div>
 
             {/* Product description */}
