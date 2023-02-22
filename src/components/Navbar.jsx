@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="md:bg-gray-100 py-4 xl:py-8">
-        <div className="container mx-auto flex flex-col md:flex-row h-full justify-center items-center md:justify-between px-5 xl:max-w-screen-xl  xl:px-28 space-y-2 ">
+        <div className="container mx-auto flex flex-col md:flex-row h-full justify-center items-center md:justify-between px-5 xl:max-w-screen-xl xl:px-28 space-y-2  ">
           {/* Logo */}
           <Logo />
           {/* Menu items */}

@@ -10,7 +10,7 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
 
 exports.handler = async () => {
   try {
-    const response = await airtable.list({ maxRecords: 200 })
+    const response = await airtable.list({ maxRecords: 100 })
 
     const products = response.records.map((product) => {
       const { id, fields } = product
@@ -38,6 +38,7 @@ exports.handler = async () => {
         shipping,
         origin,
         images,
+        exclusive,
         new_in_market,
       } = fields
       const { url } = images[0]
@@ -67,6 +68,7 @@ exports.handler = async () => {
         origin,
         image: url,
         images,
+        exclusive,
         new_in_market,
       }
     })

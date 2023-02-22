@@ -8,6 +8,7 @@ import {
   Error,
   Checkout,
   ProtectedRoute,
+  Completion,
 } from "./pages"
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           }
         />
         <Route path="*" element={<Error />} />
+        <Route path="/completion" element={<Completion />} />
       </Routes>
       <Footer />
     </BrowserRouter>

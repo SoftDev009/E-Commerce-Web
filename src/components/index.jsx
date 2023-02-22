@@ -20,7 +20,6 @@ import ProductImages from "./ProductImages"
 import Sort from "./Sort"
 import Grid_view_products from "./Grid_view_products"
 import List_view_products from "./List_view_products"
-import CartComponent from "./CartComponent"
 import AddToCart from "./AddToCart"
 import ProductImage from "./ProductImage"
 import Product_title from "./Product_title"
@@ -31,8 +30,10 @@ import Stripe_Checkout from "./Stripe_Checkout"
 import Cart_Button from "./Cart_Button"
 import NotFound from "./NotFound"
 import Exclusive_Products from "./Exclusive_Products"
+import CartItems from "./CartItems"
 
 export {
+  CartItems,
   Exclusive_Products,
   NotFound,
   Cart_Button,
@@ -43,7 +44,6 @@ export {
   Product_title,
   ProductImage,
   AddToCart,
-  CartComponent,
   List_view_products,
   Grid_view_products,
   Sort,

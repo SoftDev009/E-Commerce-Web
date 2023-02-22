@@ -12,12 +12,12 @@ export const navLinks = [
   {
     id: 3,
     title: "product",
-    url: "/shop",
+    url: "/product",
   },
   {
     id: 4,
     title: "contact",
-    url: "",
+    url: "/contact",
   },
 ]
 
