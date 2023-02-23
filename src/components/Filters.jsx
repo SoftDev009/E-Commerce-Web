@@ -104,7 +104,6 @@ const Filters = () => {
             price
           </label>
         </div>
-        <hr className="mt-2" />
         <input
           type="range"
           name="price"

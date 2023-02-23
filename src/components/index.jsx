@@ -32,8 +32,9 @@ import NotFound from "./NotFound"
 import Exclusive_Products from "./Exclusive_Products"
 import CartItems from "./CartItems"
 import Stars from "./Stars"
-
+import Sidebar_Filter from "./Sidebar_Filter"
 export {
+  Sidebar_Filter,
   Stars,
   CartItems,
   Exclusive_Products,
