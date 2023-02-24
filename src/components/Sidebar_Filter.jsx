@@ -24,36 +24,35 @@ const Sidebar_Filter = () => {
   const companies = getUniqueValues(all_products, "company")
   const colors = getUniqueValues(all_products, "colors")
 
+  // Close sidebar
+  const closeSidebar = () => {
+    setIsSidebarOpen(false)
+  }
+
   if (isSidebarOpen === true) {
     document.body.classList.add("overflow-hidden")
   } else {
     document.body.classList.remove("overflow-hidden")
   }
 
-  //  Open sidebar
-  const openSidebar = () => {
-    setIsSidebarOpen(true)
-  }
-  // Close sidebar
-  const closeSidebar = () => {
-    setIsSidebarOpen(false)
-  }
-
   return (
     <>
       <aside
-        className={` lg:hidden z-50   ${
+        className={` lg:hidden z-50 ${
           isSidebarOpen
             ? "transition-all duration-200 ease-out delay-150"
             : "translate-x-full transform transition-all duration-300 ease-out delay-150  "
-        } fixed md:w-1/2 w-10/12 top-0 right-0 bg-white h-full shadow-md`}
+        } fixed md:w-1/2 w-10/12 top-0 right-0 bg-white h-full shadow-md `}
       >
-        <section className="p-8 space-y-8 font-light ">
+        <section className="p-8 h-full space-y-8 font-light overflow-y-auto scrollbar-hide ">
           <div className="flex justify-between">
             <h2 className="text-xl uppercase ">Filter by</h2>
             <button
               className="text-sm text-primary capitalize"
-              onClick={clearFilters}
+              onClick={() => {
+                clearFilters()
+                setIsSidebarOpen(false)
+              }}
             >
               Clear all
             </button>
@@ -119,6 +118,7 @@ const Sidebar_Filter = () => {
             </select>
           </div>
 
+          {/* Colors */}
           <div className=" space-y-2 ">
             <h2 className=" capitalize font-medium tracking-wider">Colors</h2>
             <div className=" flex space-x-4 ">
@@ -164,7 +164,7 @@ const Sidebar_Filter = () => {
             <div className="flex justify-between">
               <label
                 htmlFor="price"
-                className="text-lg uppercase font-medium tracking-wider"
+                className=" capitalize font-medium tracking-wider"
               >
                 price
               </label>
@@ -182,7 +182,7 @@ const Sidebar_Filter = () => {
           </div>
 
           {/* Shipping */}
-          <div className="flex items-center space-x-5 capitalize group ">
+          <div className="flex items-center space-x-5 capitalize group">
             <input
               type="checkbox"
               name="shipping"
@@ -202,10 +202,10 @@ const Sidebar_Filter = () => {
         </section>
 
         {/* Filter button */}
-        <div className=" absolute inset-y-1/2 -left-10 ">
+        <div className={`absolute inset-y-1/2 -left-10`}>
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className=" px-3 py-3 bg-black hover:bg-primary    "
+            className=" px-3 py-3 bg-black hover:bg-primary"
           >
             {" "}
             {isSidebarOpen ? (
