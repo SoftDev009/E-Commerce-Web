@@ -1,20 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
-import { BsList, BsX } from "react-icons/bs"
+import { BsList } from "react-icons/bs"
 import { Sidebar, Logo, Cart_Button } from "../components"
 import { useProductsContext } from "../context/products_context"
 
 const Navbar = () => {
-  const { openSidebar, isSidebarOpen, closeSidebar } = useProductsContext()
+  const { openSidebar, isSidebarOpen } = useProductsContext()
   return (
     <>
       <nav className="md:bg-gray-100 py-4 xl:py-8">
         <div className="container mx-auto flex flex-col md:flex-row h-full justify-center items-center md:justify-between px-5 xl:max-w-screen-xl xl:px-28 space-y-2  ">
           {/* Logo */}
-          <Logo />
+          <Logo className=" text-3xl " />
           {/* Menu items */}
-          <div className="hidden space-x-10 capitalize font-medium md:flex ">
+          <div className="hidden space-x-10 text-sm uppercase md:flex">
             {navLinks.map((menu) => {
               const { id, title, url } = menu
               return (
