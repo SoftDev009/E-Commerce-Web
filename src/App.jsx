@@ -9,6 +9,9 @@ import {
   Checkout,
   ProtectedRoute,
   Completion,
+  Features,
+  Services,
+  News,
 } from "./pages"
 
 function App() {
@@ -29,6 +32,10 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/features" element={<Features />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/news" element={<News />} />
         <Route path="*" element={<Error />} />
         <Route path="/completion" element={<Completion />} />
       </Routes>
