@@ -1,5 +1,5 @@
 import React from "react"
-import { CartItems } from "../components"
+import { Breadcrumb, CartItems } from "../components"
 import { useCartContext } from "../context/cart_context"
 import { Empty_cart } from "../components"
 
@@ -8,6 +8,7 @@ const Cart = () => {
   if (cart.length === 0) return <Empty_cart />
   return (
     <>
+      <Breadcrumb title="cart" />
       <CartItems />
     </>
   )
