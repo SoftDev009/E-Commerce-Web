@@ -6,7 +6,7 @@ import { Order_summary, ProductImage } from "../components"
 const CartItems = () => {
   const { cart, removeItem, toggleAmount } = useCartContext()
   return (
-    <section className="container mx-auto mt-20 px-5 lg:px-0 xl:px-28 flex flex-col lg:flex-row gap-28 xl:gap-28 lg:gap-10 justify-between md:items-center lg:items-start ">
+    <section className="container mx-auto mt-20 px-5 xl:px-28 flex flex-col lg:flex-row gap-28 xl:gap-28 lg:gap-10 justify-between md:items-center lg:items-start ">
       {/* Right */}
       <div className="md:w-full  ">
         <h4 className="font-medium text-xl flex items-center py-2 capitalize tracking-widest ">
@@ -27,7 +27,10 @@ const CartItems = () => {
             <article key={id} className="grid md:grid-cols-5 mt-10 relative  ">
               <div className=" grid grid-cols-2 col-span-2  gap-5 ">
                 {/* image */}
-                <ProductImage product={item} className="  h-44 p-4 " />
+                <ProductImage
+                  product={item}
+                  className="  h-44 p-4 lg:h-32 md:h-40 xl:h-44  "
+                />
                 <div className="h-full flex flex-col space-y-4   ">
                   {/*  name */}
                   <p className=" md:font-medium  "> {name} </p>
