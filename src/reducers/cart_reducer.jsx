@@ -9,7 +9,7 @@ const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
     const { id, color, amount, product } = action.payload
     // Check if the item is already in the cart or not
-    let tempItem = state.cart.find((item) => item.id === id)
+    let tempItem = state.cart.find((item) => item.id === id + color)
     // If the item exist in the cart then I will map over the cart and check if the the cart item id matches the Id + color then I will just increase the amount else I will return the cart Item
     if (tempItem) {
       const tempCart = state.cart.map((cartItem) => {
