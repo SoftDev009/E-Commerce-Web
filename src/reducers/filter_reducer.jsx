@@ -62,7 +62,7 @@ const filter_reducer = (state, action) => {
 
   if (action.type === FILTER_PRODUCTS) {
     const { all_products } = state
-    const { text, category, company, price, shipping } = state.filters
+    const { text, category, company, price, shipping, color } = state.filters
     let tempProducts = [...all_products]
     // Search product
     if (text) {
@@ -81,6 +81,13 @@ const filter_reducer = (state, action) => {
       tempProducts = tempProducts.filter(
         (product) => product.company === company
       )
+    }
+
+    // Color filter
+    if (color !== "all") {
+      tempProducts = tempProducts.filter((product) => {
+        return product.colors.find((colorButton) => colorButton === color)
+      })
     }
 
     // Price filter
@@ -102,7 +109,7 @@ const filter_reducer = (state, action) => {
         text: "",
         company: "all",
         category: "all",
-        // color: "all",
+        color: "all",
         price: state.filters.max_price,
         shipping: false,
       },

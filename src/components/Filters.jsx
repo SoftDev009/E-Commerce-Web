@@ -1,7 +1,7 @@
 import React from "react"
 import { useFilterContext } from "../context/filter_context"
 import { formatPrice, getUniqueValues } from "../utils/helper"
-import { BsSearch } from "react-icons/bs"
+import { BsSearch, BsCheck } from "react-icons/bs"
 
 const Filters = () => {
   const {
@@ -94,12 +94,51 @@ const Filters = () => {
         </select>
       </div>
 
+      {/* Colors */}
+      <div className=" space-y-2 ">
+        <h2 className=" capitalize font-medium tracking-wider">Colors</h2>
+        <div className=" flex space-x-4 ">
+          {colors.map((colorButton, index) => {
+            if (colorButton === "all") {
+              return (
+                <button
+                  key={index}
+                  name="color"
+                  data-color="all"
+                  className={` ${
+                    color === colorButton ? " border-b-2 border-primary " : null
+                  } `}
+                  onClick={updateFilters}
+                >
+                  {" "}
+                  All{" "}
+                </button>
+              )
+            }
+            return (
+              <button
+                key={index}
+                name="color"
+                data-color={colorButton}
+                style={{ background: colorButton }}
+                className=" w-6 h-6 border-2 border-gray-300  "
+                onClick={updateFilters}
+              >
+                {color === colorButton ? (
+                  <BsCheck className=" text-white w-5 h-5 " />
+                ) : null}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
       {/* Price */}
       <div className="">
         <div className="flex justify-between">
           <label
             htmlFor="price"
-            className="text-lg uppercase font-medium tracking-wider"
+            className="capitalize font-medium tracking-wider"
           >
             price
           </label>
