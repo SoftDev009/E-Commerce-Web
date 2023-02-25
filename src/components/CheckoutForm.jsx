@@ -5,15 +5,15 @@ import {
   useElements,
 } from "@stripe/react-stripe-js"
 import { useEffect, useState } from "react"
-import { useCartContext } from "../context/cart_context"
 
 const CheckoutForm = () => {
   const stripe = useStripe()
   const elements = useElements()
+
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-  const { clearCart } = useCartContext()
+
   useEffect(() => {
     if (!stripe) {
       return
@@ -69,25 +69,26 @@ const CheckoutForm = () => {
     } else {
       setMessage("An unexpected error occurred.")
     }
-
     setIsLoading(false)
   }
   const paymentElementOptions = {
     layout: "tabs",
   }
-
   return (
     <>
-      <form id="payment-form" onSubmit={handleSubmit} className="stripe_form">
+      <form
+        id="payment-form"
+        onSubmit={handleSubmit}
+        className=" stripe_form  md:mt-28 mt-10"
+      >
         <LinkAuthenticationElement
           id="link-authenticate-element"
           value={email}
-          // onChange={(e) => setEmail(e.target.value)}
           onChange={(e) => setEmail(e.target.value)}
         />
         <PaymentElement id="payment-element" options={paymentElementOptions} />
         <button
-          className=" stripe_button "
+          className=" stripe_button"
           disabled={isLoading || !stripe || !elements}
           id="submit"
         >

@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
-
 import { useCartContext } from "../context/cart_context"
-import { formatPrice } from "../utils/helper"
-import { useNavigate } from "react-router-dom"
 import CardStyle from "../app.css"
 import axios from "axios"
-import { useAuth0 } from "@auth0/auth0-react"
 import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "./CheckoutForm"
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
 
 const Stripe_Checkout = () => {
-  const { user } = useAuth0()
   const { cart, total_amount, shipping_fee } = useCartContext()
-  const navigate = useNavigate()
   // Stripe Stuff
   const [clientSecret, setClientSecret] = useState("")
 
