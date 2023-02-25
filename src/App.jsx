@@ -32,12 +32,20 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/completion"
+          element={
+            <ProtectedRoute>
+              {" "}
+              <Completion />{" "}
+            </ProtectedRoute>
+          }
+        />
 
         <Route path="/features" element={<Features />} />
         <Route path="/services" element={<Services />} />
         <Route path="/news" element={<News />} />
         <Route path="*" element={<Error />} />
-        <Route path="/completion" element={<Completion />} />
       </Routes>
       <Footer />
     </BrowserRouter>
