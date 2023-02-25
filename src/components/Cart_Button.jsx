@@ -11,6 +11,7 @@ const Cart_Button = () => {
     <>
       <div className="  space-x-8 flex  md:space-x-8">
         <Link
+          title="Cart"
           to="/cart"
           className="relative flex flex-row justify-center items-center "
         >
@@ -24,6 +25,7 @@ const Cart_Button = () => {
         <div className="flex-col-reverse items-center justify-center md:flex md:flex-row ">
           {user ? (
             <button
+              title="Logout"
               className="flex hover:text-primary "
               onClick={() => {
                 clearCart()
@@ -33,7 +35,11 @@ const Cart_Button = () => {
               <BsPersonDash className="h-6 w-6" />
             </button>
           ) : (
-            <button className="flex" onClick={() => loginWithRedirect()}>
+            <button
+              title="Login"
+              className="flex"
+              onClick={() => loginWithRedirect()}
+            >
               <BsPersonPlus className="h-6 w-6" />
             </button>
           )}
