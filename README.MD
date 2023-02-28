@@ -1,5 +1,5 @@
 
-![Logo](https://res.cloudinary.com/die12ywpb/image/upload/v1677594681/Minimalist_Brown_Music_Logo_Instagram_f-removebg-preview_qhnolg.png)
+![Logo](https://res.cloudinary.com/die12ywpb/image/upload/v1677599870/Minimalist_Brown_Music_Logo_Instagram_f_h0utlr.png)
 
 
 # Shoptik - Furniture eCommerce Web App
