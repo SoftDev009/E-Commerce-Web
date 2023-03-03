@@ -44,15 +44,16 @@ const Order_summary = () => {
           </span>{" "}
         </h5>
         {user ? (
-          <button className="mt-5 w-full bg-primary py-4 uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/80 ">
-            <Link to="/checkout">
-              Proceed to buy{" "}
-              <span className="  capitalize ">
-                {" "}
-                ({total_items} item{total_items > 1 && "s"} ){" "}
-              </span>
-            </Link>
-          </button>
+          <Link
+            to="/checkout"
+            className="mt-5 block w-full bg-primary py-4 text-center uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/80 "
+          >
+            Proceed to buy{" "}
+            <span className="capitalize">
+              {" "}
+              ({total_items} item{total_items > 1 && "s"} ){" "}
+            </span>
+          </Link>
         ) : (
           <button
             onClick={loginWithRedirect}
@@ -61,7 +62,7 @@ const Order_summary = () => {
           >
             {" "}
             Login to buy{" "}
-            <span className="  capitalize ">
+            <span className=" capitalize ">
               {" "}
               ({total_items} item{total_items > 1 && "s"} ){" "}
             </span>
