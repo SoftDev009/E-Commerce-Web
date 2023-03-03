@@ -29,7 +29,6 @@ import Empty_cart from "./Empty_cart"
 import Stripe_Checkout from "./Stripe_Checkout"
 import Cart_Button from "./Cart_Button"
 import NotFound from "./NotFound"
-import Exclusive_Products from "./Exclusive_Products"
 import CartItems from "./CartItems"
 import Stars from "./Stars"
 import Sidebar_Filter from "./Sidebar_Filter"
@@ -37,7 +36,6 @@ export {
   Sidebar_Filter,
   Stars,
   CartItems,
-  Exclusive_Products,
   NotFound,
   Cart_Button,
   Stripe_Checkout,

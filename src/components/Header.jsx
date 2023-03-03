@@ -4,15 +4,15 @@ import Light2 from '../assets/light2.png'
 import { View_button } from "../components"
 const Header = () => {
   return (
-    <header className="bg-[#d2e9e3] container mx-auto px-5 xl:px-28 relative py-14 lg:py-20 xl:h-[28rem] flex overflow-hidden">
-      <div className=" md:w-2/3 xl:w-1/2 space-y-8 md:space-y-16">
+    <header className="container relative mx-auto flex overflow-hidden bg-[#d2e9e3] px-5 py-14 lg:py-20 xl:h-[28rem] xl:px-28">
+      <div className=" space-y-8 md:w-2/3 md:space-y-16 xl:w-1/2">
         <div className="space-y-4">
-          <h1 className="md:text-5xl text-4xl font-light leading-[1.2] capitalize">
+          <h1 className="text-4xl font-light capitalize leading-[1.2] md:text-5xl">
             {" "}
             <span className=" font-medium ">Shoptik</span> Number #1Trusted
             furniture website.{" "}
           </h1>
-          <p className="text-orange-400 font-medium">
+          <p className="font-medium text-orange-400">
             coming soon in your door with a huge discount.
           </p>
         </div>
@@ -21,12 +21,12 @@ const Header = () => {
       <img
         src={Light2}
         alt=""
-        className=" hidden md:flex w-80 xl:w-96 object-cover object-center absolute -top-16 md:-top-5  xl:-top-10 right-[8rem] md:right-[5rem] xl:right-[26rem] transform scale-150 "
+        className=" absolute -top-16 right-[8rem] hidden w-80 scale-150 transform object-cover object-center  md:-top-5 md:right-[5rem] md:flex xl:-top-10 xl:right-[26rem] xl:w-96 "
       />
       <img
         src={Light1}
         alt=""
-        className=" hidden md:flex w-80 xl:w-96 object-cover object-center absolute -top-32 xl:-top-36 -right-12 md:-right-20 xl:right-20 xl:mr-28 transform scale-125"
+        className=" absolute -top-32 -right-12 hidden w-80 scale-125 transform object-cover object-center md:-right-20 md:flex xl:-top-36 xl:right-20 xl:mr-28 xl:w-96"
       />
     </header>
   )

@@ -24,40 +24,40 @@ const CartItems = () => {
         {cart.map((item) => {
           const { amount, color, id, name, price, max } = item
           return (
-            <article key={id} className="grid md:grid-cols-5 mt-10 relative  ">
-              <div className=" grid grid-cols-2 col-span-2  gap-5 ">
+            <article key={id} className="relative mt-10 grid md:grid-cols-5  ">
+              <div className=" col-span-2 grid grid-cols-2  gap-5 ">
                 {/* image */}
                 <ProductImage
                   product={item}
-                  className="  h-44 p-4 lg:h-32 md:h-40 xl:h-44  "
+                  className="  h-44 p-4 md:h-40 lg:h-32 xl:h-44  "
                 />
-                <div className="h-full flex flex-col space-y-4   ">
+                <div className="flex h-full flex-col space-y-4   ">
                   {/*  name */}
                   <p className=" md:font-medium  "> {name} </p>
                   <div className="  space-y-1 ">
                     {/* stock */}
-                    <p className=" text-xs text-green-600 font-light ">
+                    <p className=" text-xs font-light text-green-600 ">
                       {" "}
                       {max > 1 ? "In stock" : "out of stock"}{" "}
                     </p>
                     {/* color */}
-                    <p className="text-xs text-gray-500 capitalize flex items-center  ">
+                    <p className="flex items-center text-xs capitalize text-gray-500  ">
                       {" "}
                       color :{" "}
                       <span
                         style={{ background: color }}
-                        className="w-3 h-3  rounded-full ml-3"
+                        className="ml-3 h-3  w-3 rounded-full"
                       >
                         {" "}
                       </span>{" "}
                     </p>
                     {/* Price */}
-                    <p className="font-sans md:hidden  font-semibold ">
+                    <p className="font-sans font-semibold  md:hidden ">
                       {" "}
                       {formatPrice(price)}{" "}
                     </p>
                     {/* Quantity */}
-                    <div className=" py-2 space-x-4 md:hidden flex items-center ">
+                    <div className=" flex items-center space-x-4 py-2 md:hidden ">
                       <button
                         className="text-right"
                         onClick={() => toggleAmount(id, "decrease")}
@@ -65,7 +65,7 @@ const CartItems = () => {
                         {" "}
                         <BiMinus />{" "}
                       </button>
-                      <p className="text-center bg-black text-white px-2 ">
+                      <p className="bg-black px-2 text-center text-white ">
                         {" "}
                         {amount}{" "}
                       </p>
@@ -79,7 +79,7 @@ const CartItems = () => {
                     </div>
                     {/* Remove button */}
                     <button
-                      className=" text-sm underline tracking-wider pt4 "
+                      className=" pt4 text-sm tracking-wider underline "
                       onClick={() => removeItem(id)}
                     >
                       {" "}
@@ -90,7 +90,7 @@ const CartItems = () => {
               </div>
 
               {/* Quantity */}
-              <div className="  space-x-4  hidden md:flex justify-center items-center ">
+              <div className="  hidden  items-center justify-center space-x-4 md:flex ">
                 <button
                   className="text-right"
                   onClick={() => toggleAmount(id, "decrease")}
@@ -98,7 +98,7 @@ const CartItems = () => {
                   {" "}
                   <BiMinus />{" "}
                 </button>
-                <p className="text-center bg-black text-white px-2 ">
+                <p className="bg-black px-2 text-center text-white ">
                   {" "}
                   {amount}{" "}
                 </p>
@@ -111,11 +111,11 @@ const CartItems = () => {
                 </button>
               </div>
               {/* Price */}
-              <p className="text-right hidden md:flex justify-end items-center">
+              <p className="hidden items-center justify-end text-right md:flex">
                 {formatPrice(price)}
               </p>
               {/* Total */}
-              <p className=" hidden font-medium text-right md:flex justify-end items-center">
+              <p className=" hidden items-center justify-end text-right font-medium md:flex">
                 {formatPrice(price * amount)}
               </p>
             </article>

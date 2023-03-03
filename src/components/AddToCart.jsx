@@ -37,17 +37,17 @@ const AddToCart = ({ product }) => {
       <section className=" space-y-8 ">
         {/* colors */}
         <div className="flex items-center space-x-4">
-          <span className=" text-sm text-gray-500 uppercase w-20  ">
+          <span className=" w-20 text-sm uppercase text-gray-500  ">
             Color :
           </span>
-          <div className="space-x-4 flex justify-center items-center">
+          <div className="flex items-center justify-center space-x-4">
             {colors?.map((colorButton, index) => {
               return (
                 <button
                   key={index}
                   onClick={() => setMainColor(colorButton)}
                   style={{ background: colorButton }}
-                  className={` text-white w-5 h-5 rounded-full flex justify-center items-center   `}
+                  className={` flex h-5 w-5 items-center justify-center rounded-full text-white   `}
                 >
                   {" "}
                   {mainColor === colorButton ? <BsCheck /> : null}
@@ -61,11 +61,11 @@ const AddToCart = ({ product }) => {
         <div className="flex items-center space-x-4 ">
           <label
             htmlFor="quantity"
-            className=" uppercase text-gray-500 text-sm w-20  "
+            className=" w-20 text-sm uppercase text-gray-500  "
           >
             Quantity:
           </label>
-          <div className=" relative flex  justify-center items-center ">
+          <div className=" relative flex  items-center justify-center ">
             <input
               name="quantity"
               id="quantity"
@@ -74,39 +74,39 @@ const AddToCart = ({ product }) => {
               max={10}
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
-              className=" w-16 h-[40px] text-center outline-none border-gray-200 focus:ring-0 focus:border-gray-200 disabled:cursor-not-allowed "
+              className=" h-[40px] w-16 border-gray-200 text-center outline-none focus:border-gray-200 focus:ring-0 disabled:cursor-not-allowed "
               aria-label="Quantity"
             />
-            <span className=" absolute flex flex-col justify-center items-center -right-[23px] space-y-[0.5px] border  h-[40px] w-6  ">
+            <span className=" absolute -right-[23px] flex h-[40px] w-6 flex-col items-center justify-center  space-y-[0.5px] border  ">
               <button
                 title="Increase"
-                className={`border-b w-full h-full flex flex-col justify-center items-center hover:bg-black`}
+                className={`flex h-full w-full flex-col items-center justify-center border-b hover:bg-black`}
                 onClick={increaseAmount}
               >
                 {" "}
-                <BiChevronUp className=" w-4 h-4 text-gray-500   hover:text-white" />{" "}
+                <BiChevronUp className=" h-4 w-4 text-gray-500   hover:text-white" />{" "}
               </button>
               <button
                 title="Decrease"
-                className=" border-t w-full h-full flex flex-col justify-center items-center hover:bg-black "
+                className=" flex h-full w-full flex-col items-center justify-center border-t hover:bg-black "
                 onClick={decreaseAmount}
               >
                 {" "}
-                <BiChevronDown className=" w-4 h-4 text-gray-500 hover:text-white  " />{" "}
+                <BiChevronDown className=" h-4 w-4 text-gray-500 hover:text-white  " />{" "}
               </button>
             </span>
           </div>
         </div>
         {/* Add to cart Buttons */}
-        <div className="xl:justify-start justify-between  xl:space-x-8 flex w-full items-center">
+        <div className="flex w-full  items-center justify-between xl:justify-start xl:space-x-8">
           <Link
             to="/cart"
-            className={`flex bg-black text-sm uppercase tracking-wider text-white py-4 px-14 hover:bg-primary   `}
+            className={`flex bg-black py-4 px-14 text-sm uppercase tracking-wider text-white hover:bg-primary   `}
             onClick={() => addToCart(id, mainColor, amount, product)}
           >
             <span>
               {" "}
-              <BsCart2 className="w-6 h-4 mr-1 " />{" "}
+              <BsCart2 className="mr-1 h-4 w-6 " />{" "}
             </span>
             Add to Cart
           </Link>

@@ -28,9 +28,9 @@ const HomeProduct = () => {
                   name="category"
                   key={index}
                   onClick={updateFilters}
-                  className={` snap-start text-start uppercase tracking-widest font-medium ${
+                  className={` snap-start text-start font-medium uppercase tracking-widest ${
                     category === categoryButton
-                      ? "text-primary border-b-[1.8px] border-primary "
+                      ? "border-b-[1.8px] border-primary text-primary "
                       : null
                   } `}
                 >

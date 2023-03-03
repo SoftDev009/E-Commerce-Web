@@ -7,18 +7,18 @@ const NotFound = () => {
   } = useFilterContext()
   return (
     <section className=" grid place-items-center space-y-10 ">
-      <h3 className=" text-sm mt-10 md:mt-24  ">
+      <h3 className=" mt-10 text-sm md:mt-24  ">
         {" "}
         You searched for
         <span className=" font-medium text-indigo-600 "> {text} </span>{" "}
       </h3>
       <img src={NotFoundProduct} alt="" className=" w-60 " />
       <div className=" space-y-2 ">
-        <h3 className=" text-3xl text-center ">
+        <h3 className=" text-center text-3xl ">
           {" "}
           We could't find any matches!{" "}
         </h3>
-        <p className=" text-xs text-gray-400 text-center  ">
+        <p className=" text-center text-xs text-gray-400  ">
           Please check the spelling or try searching something else
         </p>
       </div>

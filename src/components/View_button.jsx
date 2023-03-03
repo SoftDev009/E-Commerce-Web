@@ -6,7 +6,7 @@ const View_button = ({ title, className }) => {
     <>
       <div className="pt-5 ">
         <Link
-          className={`uppercase text-[10px] tracking-wider border-b border-black py-1 hover:text-primary hover:border-b-primary ${className}  `}
+          className={`border-b border-black py-1 text-[10px] uppercase tracking-wider hover:border-b-primary hover:text-primary ${className}  `}
         >
           {title}
         </Link>

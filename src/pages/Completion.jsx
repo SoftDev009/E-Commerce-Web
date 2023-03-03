@@ -11,16 +11,16 @@ const Completion = () => {
   }, [])
 
   return (
-    <section className=" container mx-auto px-5 md:px-28 grid place-items-center my-20">
-      <p className=" mb-2 text-gray-600 font-light ">
+    <section className=" container mx-auto my-20 grid place-items-center px-5 md:px-28">
+      <p className=" mb-2 font-light text-gray-600 ">
         Redirecting to Homepage in 25s{" "}
       </p>
-      <article className=" bg-gray-100 py-10 px-5 md:p-16 text-center rounded">
-        <div className=" flex flex-col justify-center items-center space-y-4 ">
-          <h3 className="text-xl md:text-3xl font-medium ">
+      <article className=" rounded bg-gray-100 py-10 px-5 text-center md:p-16">
+        <div className=" flex flex-col items-center justify-center space-y-4 ">
+          <h3 className="text-xl font-medium md:text-3xl ">
             Your order has been received!{" "}
           </h3>
-          <BsFillCheckCircleFill className=" w-7 h-7 md:w-10 md:h-10 fill-green-600 " />
+          <BsFillCheckCircleFill className=" h-7 w-7 fill-green-600 md:h-10 md:w-10 " />
           <div className=" text-center ">
             <h4 className=" font-medium ">Thank you for your purchase!</h4>
             <p className=" text-sm ">Your order ID: 09284024895 </p>
@@ -32,12 +32,12 @@ const Completion = () => {
           <div className=" pt-10 ">
             <Link
               to="/shop"
-              className=" bg-primary flex justify-center items-center  capitalize px-5 text-white py-2 space-x-2 group"
+              className=" group flex items-center justify-center  space-x-2 bg-primary px-5 py-2 capitalize text-white"
             >
               {" "}
               <span>Continue shopping</span>
-              <span className=" group-hover:translate-x-2 transform transition-all duration-200 ease-linear ">
-                <BsArrowRight className="w-5 h-5  " />
+              <span className=" transform transition-all duration-200 ease-linear group-hover:translate-x-2 ">
+                <BsArrowRight className="h-5 w-5  " />
               </span>
             </Link>
           </div>

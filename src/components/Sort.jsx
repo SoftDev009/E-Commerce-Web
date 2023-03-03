@@ -2,6 +2,7 @@ import React from "react"
 import { BsFillGrid3X3GapFill } from "react-icons/bs"
 import { FaThList } from "react-icons/fa"
 import { useFilterContext } from "../context/filter_context"
+
 const Sort = () => {
   const {
     filtered_products: products,
@@ -14,15 +15,15 @@ const Sort = () => {
   return (
     <>
       {/* Total products count and sort filter */}
-      <section className="flex justify-between items-center">
-        <div className="flex space-x-2 justify-center items-center">
+      <section className="flex items-center justify-between">
+        <div className="flex items-center justify-center space-x-2">
           <button
             className={`md:px-2 md:py-2 ${
               grid_view ? "text-black" : "text-gray-300"
             } `}
             onClick={setGridView}
           >
-            <BsFillGrid3X3GapFill className="w-4 h-4" />
+            <BsFillGrid3X3GapFill className="h-4 w-4" />
           </button>
           <button
             className={`md:px-2 md:py-2 ${
@@ -30,15 +31,15 @@ const Sort = () => {
             } `}
             onClick={setListView}
           >
-            <FaThList className="w-4 h-4" />
+            <FaThList className="h-4 w-4" />
           </button>
-          <p className="text-xs md:text-base hidden md:block ">
+          <p className="hidden text-xs md:block md:text-base ">
             {" "}
             {products.length} Product{products.length > 1 && "s"} found{" "}
           </p>
         </div>
-        <hr className=" hidden md:block  w-2/5 " />
-        <form className=" flex justify-end md:justify-center items-center ">
+        <hr className=" hidden w-2/5  md:block " />
+        <form className=" flex items-center justify-end md:justify-center ">
           <label htmlFor="sort" className="flex text-xs ">
             sort by
           </label>
@@ -46,7 +47,7 @@ const Sort = () => {
             name="sort"
             id="sort"
             value={sort}
-            className="py-1 text-xs md:text-base capitalize border-none focus:ring-0 "
+            className="border-none py-1 text-xs capitalize focus:ring-0 md:text-base "
             onChange={(e) => updateSort(e)}
           >
             <option value="price-lowest">price (lowest)</option>

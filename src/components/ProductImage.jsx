@@ -6,11 +6,11 @@ const ProductImage = ({ product, className }) => {
   return (
     <>
       <Link to={`/shop/${id}`}>
-        <div className="bg-gray-100 border border-gray-200/50 flex justify-center items-center  ">
+        <div className="flex items-center justify-center border border-gray-200/50 bg-gray-100  ">
           <img
             src={image}
             alt={name}
-            className={` ${className}  object-cover object-center mix-blend-darken transition-all duration-300 delay-75 ease-linear group-hover:scale-110  `}
+            className={` ${className}  object-cover object-center mix-blend-darken transition-all delay-75 duration-300 ease-linear group-hover:scale-110  `}
           />
         </div>
       </Link>

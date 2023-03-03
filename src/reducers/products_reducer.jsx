@@ -9,7 +9,6 @@ import {
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
 } from "../actions"
-import products from "../data"
 
 const products_reducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {
@@ -71,7 +70,6 @@ const products_reducer = (state, action) => {
   }
   //* ================= END =================
 
-  return state
   throw new Error(`No matching "${action.type}" - action type `)
 }
 

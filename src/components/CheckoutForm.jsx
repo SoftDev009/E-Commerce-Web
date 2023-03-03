@@ -79,7 +79,7 @@ const CheckoutForm = () => {
       <form
         id="payment-form"
         onSubmit={handleSubmit}
-        className=" stripe_form  md:mt-28 mt-10"
+        className=" stripe_form  mt-10 md:mt-28"
       >
         <LinkAuthenticationElement
           id="link-authenticate-element"

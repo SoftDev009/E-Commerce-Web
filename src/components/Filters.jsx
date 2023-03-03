@@ -25,11 +25,11 @@ const Filters = () => {
   const colors = getUniqueValues(all_products, "colors")
 
   return (
-    <aside className=" w-1/3 p-8  space-y-8 hidden lg:flex flex-col sticky top-0 font-light border  h-full      ">
+    <aside className=" sticky top-0  hidden h-full w-1/3 flex-col space-y-8 border p-8 font-light  lg:flex      ">
       <div className="flex justify-between">
         <h2 className="text-2xl uppercase ">Filter by</h2>
         <button
-          className="text-sm text-primary capitalize"
+          className="text-sm capitalize text-primary"
           onClick={clearFilters}
         >
           Clear all
@@ -42,16 +42,16 @@ const Filters = () => {
           type="text"
           name="text"
           placeholder="Search product..."
-          className=" w-full border-gray-200 rounded-md  focus:border-primary ring-0 focus:ring-0  "
+          className=" w-full rounded-md border-gray-200  ring-0 focus:border-primary focus:ring-0  "
           value={text}
           onChange={updateFilters}
         />
-        <BsSearch className=" absolute top-3 right-0 mr-5 h-4 w-4 pointer-events-none " />
+        <BsSearch className=" pointer-events-none absolute top-3 right-0 mr-5 h-4 w-4 " />
       </div>
 
       {/* Categories */}
       <div className=" space-y-2 ">
-        <h2 className=" capitalize font-medium tracking-wider">Categories</h2>
+        <h2 className=" font-medium capitalize tracking-wider">Categories</h2>
         {categories.map((categoryButton, index) => {
           return (
             <div className="flex " key={index}>
@@ -59,7 +59,7 @@ const Filters = () => {
                 name="category"
                 id="category"
                 onClick={updateFilters}
-                className={`capitalize text-lg ${
+                className={`text-lg capitalize ${
                   category === categoryButton ? "text-primary" : null
                 } `}
               >
@@ -72,12 +72,12 @@ const Filters = () => {
 
       {/* company / Brand */}
       <div className=" space-y-2 ">
-        <h2 className=" capitalize font-medium tracking-wider">Brand</h2>
+        <h2 className=" font-medium capitalize tracking-wider">Brand</h2>
         <select
           name="company"
           value={company}
           onChange={updateFilters}
-          className=" capitalize rounded-md border-gray-200 focus:border-primary focus:ring-0  "
+          className=" rounded-md border-gray-200 capitalize focus:border-primary focus:ring-0  "
         >
           {companies.map((companyOption, index) => {
             return (
@@ -96,7 +96,7 @@ const Filters = () => {
 
       {/* Colors */}
       <div className=" space-y-2 ">
-        <h2 className=" capitalize font-medium tracking-wider">Colors</h2>
+        <h2 className=" font-medium capitalize tracking-wider">Colors</h2>
         <div className=" flex space-x-4 ">
           {colors.map((colorButton, index) => {
             if (colorButton === "all") {
@@ -121,11 +121,11 @@ const Filters = () => {
                 name="color"
                 data-color={colorButton}
                 style={{ background: colorButton }}
-                className=" w-6 h-6 border-2 border-gray-300  "
+                className=" h-6 w-6 border-2 border-gray-300  "
                 onClick={updateFilters}
               >
                 {color === colorButton ? (
-                  <BsCheck className=" text-white w-5 h-5 " />
+                  <BsCheck className=" h-5 w-5 text-white " />
                 ) : null}
               </button>
             )
@@ -138,7 +138,7 @@ const Filters = () => {
         <div className="flex justify-between">
           <label
             htmlFor="price"
-            className="capitalize font-medium tracking-wider"
+            className="font-medium capitalize tracking-wider"
           >
             price
           </label>
@@ -156,18 +156,18 @@ const Filters = () => {
       </div>
 
       {/* Shipping */}
-      <div className="flex items-center space-x-5 capitalize group ">
+      <div className="group flex items-center space-x-5 capitalize ">
         <input
           type="checkbox"
           name="shipping"
           id="shipping"
           checked={shipping}
-          className=" cursor-pointer  w-4 h-4 rounded outline-none focus:ring-0 focus:outline-none   "
+          className=" h-4  w-4 cursor-pointer rounded outline-none focus:outline-none focus:ring-0   "
           onChange={updateFilters}
         />
         <label
           htmlFor="shipping"
-          className="  py-2 group-hover:text-primary transition-all duration-200 ease-linear cursor-pointer select-none "
+          className="  cursor-pointer select-none py-2 transition-all duration-200 ease-linear group-hover:text-primary "
         >
           {" "}
           shipping{" "}

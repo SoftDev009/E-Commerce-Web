@@ -31,37 +31,24 @@ const SingleProduct = () => {
   if (loading) return <Loading />
   if (error) return <Error />
 
-  const {
-    name,
-    colors,
-    company,
-    description,
-    designer,
-    images,
-    material,
-    price,
-    reviews,
-    stars,
-    stock,
-    weight,
-  } = product
+  const { name, description, images, price, reviews, stars, stock } = product
   return (
     <>
       <Breadcrumb title={name} product />
-      <div className="container mx-auto px-5 xl:px-28 grid md:grid-cols-2 gap-16 my-10 xl:my-32  ">
+      <div className="container mx-auto my-10 grid gap-16 px-5 md:grid-cols-2 xl:my-32 xl:px-28  ">
         {/* Left */}
         <ProductImages product={product} images={images} />
 
         {/* Right */}
         <div className="">
-          <section className=" space-y-6 flex flex-col  justify-between  ">
+          <section className=" flex flex-col justify-between  space-y-6  ">
             <div>
               {stock > 0 ? (
-                <span className="  text-green-500 font-medium border px-4 py-2 border-green-500 text-center text-xs capitalize rounded ">
+                <span className="  rounded border border-green-500 px-4 py-2 text-center text-xs font-medium capitalize text-green-500 ">
                   In stock
                 </span>
               ) : (
-                <span className="  text-red-300 font-medium  border px-4 py-2 border-red-300 text-xs rounded capitalize ">
+                <span className="  rounded border  border-red-300 px-4 py-2 text-xs font-medium capitalize text-red-300 ">
                   Out of stock
                 </span>
               )}
@@ -74,21 +61,11 @@ const SingleProduct = () => {
             </div>
 
             {/* Product description */}
-            <p className="text-gray-500 font-light">{description}</p>
+            <p className="font-light text-gray-500">{description}</p>
 
             {/* Price and Stock availability */}
             <div className="space-y-4">
-              <h5 className="text-2xl font-bold">
-                {formatPrice(price)}
-                {/* <span className="text-lg text-gray-500 line-through font-normal">
-                  {" "}
-                  $250.00{" "}
-                </span>{" "} */}
-                {/* <span className="text-xl uppercase pl-2 font-normal text-orange-400">
-                  {" "}
-                  (75% off){" "}
-                </span>{" "} */}
-              </h5>
+              <h5 className="text-2xl font-bold">{formatPrice(price)}</h5>
             </div>
             {stock >= 1 && <AddToCart product={product} />}
             <div className=" pt-8 ">

@@ -3,47 +3,48 @@ import { useCartContext } from "../context/cart_context"
 import { formatPrice } from "../utils/helper"
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react"
+
 const Order_summary = () => {
   const { total_amount, shipping_fee, total_items } = useCartContext()
   const { user, loginWithRedirect } = useAuth0()
   return (
     <>
-      <section className=" md:w-full lg:w-1/2 mb-5 md:mb-0  ">
-        <h4 className="font-medium  text-xl flex items-center py-2 capitalize tracking-widest">
+      <section className=" mb-5 md:mb-0 md:w-full lg:w-1/2  ">
+        <h4 className="flex  items-center py-2 text-xl font-medium capitalize tracking-widest">
           Order summary
         </h4>
         <hr />
-        <article className=" mt-9 border-b-4 border-white border-dashed px-4 pt-8 space-y-4 text-sm pb-12 bg-gray-200/70 ">
-          <h5 className="flex justify-between items-center">
+        <article className=" mt-9 space-y-4 border-b-4 border-dashed border-white bg-gray-200/70 px-4 pt-8 pb-12 text-sm ">
+          <h5 className="flex items-center justify-between">
             Bag total{" "}
-            <span className="text-black text-lg">
+            <span className="text-lg text-black">
               {" "}
               {formatPrice(total_amount)}{" "}
             </span>{" "}
           </h5>
-          <h5 className="flex justify-between items-center">
+          <h5 className="flex items-center justify-between">
             Bag discount{" "}
-            <span className=" text-primary text-lg"> {formatPrice(-100)} </span>{" "}
+            <span className=" text-lg text-primary"> {formatPrice(-100)} </span>{" "}
           </h5>
-          <h5 className="flex justify-between items-center">
+          <h5 className="flex items-center justify-between">
             Convenience Fee{" "}
             <span className=" text-lg text-primary">
               {/* Free{" "} */}
-              <span className="text-black text-sm">
+              <span className="text-sm text-black">
                 {" "}
                 {formatPrice(shipping_fee)}
               </span>{" "}
             </span>{" "}
           </h5>
         </article>
-        <h5 className="flex justify-between items-center  font-medium bg-gray-100 py-8 px-4 bg-blu-100/60 text-sm bg-gray-200/70 ">
+        <h5 className="bg-blu-100/60 flex items-center  justify-between bg-gray-100 bg-gray-200/70 py-8 px-4 text-sm font-medium ">
           Subtotal{" "}
           <span className="text-xl font-medium text-black">
             {formatPrice(total_amount + shipping_fee)}
           </span>{" "}
         </h5>
         {user ? (
-          <button className="bg-primary w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary/80 transition-all duration-300 ease-linear ">
+          <button className="mt-5 w-full bg-primary py-4 uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/80 ">
             <Link to="/checkout">
               Proceed to buy{" "}
               <span className="  capitalize ">
@@ -56,7 +57,7 @@ const Order_summary = () => {
           <button
             onClick={loginWithRedirect}
             type="button"
-            className="bg-primary w-full text-white py-4 mt-5 uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 ease-linear"
+            className="mt-5 w-full bg-primary py-4 uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/90"
           >
             {" "}
             Login to buy{" "}

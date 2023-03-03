@@ -10,10 +10,10 @@ const ProductImages = ({ product, images = [{ url: "" }] }) => {
           <img
             src={main.url}
             alt="product"
-            className="h-full xl:h-full w-full object-cover object-center border mix-blend-darken p-8 "
+            className="h-full w-full border object-cover object-center p-8 mix-blend-darken xl:h-full "
           />
           {product.stock === 0 && (
-            <div className=" absolute bg-black/30 w-full h-full top-0 grid place-items-center text-3xl text-gray-200  capitalize select-none  ">
+            <div className=" absolute top-0 grid h-full w-full select-none place-items-center bg-black/30 text-3xl  capitalize text-gray-200  ">
               {" "}
               <p> Out of stock </p>{" "}
             </div>
@@ -27,8 +27,8 @@ const ProductImages = ({ product, images = [{ url: "" }] }) => {
                   src={image.url}
                   alt={image.filename}
                   onClick={() => setMain(images[index])}
-                  className={`w-20 h-20 md:w-36 md:h-32 mix-blend-multiply p-4  object-cover object-center border ${
-                    image.url === main.url ? "border-primary border-2" : null
+                  className={`h-20 w-20 border object-cover object-center p-4  mix-blend-multiply md:h-32 md:w-36 ${
+                    image.url === main.url ? "border-2 border-primary" : null
                   } `}
                 />
               </div>

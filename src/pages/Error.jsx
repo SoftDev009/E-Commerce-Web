@@ -6,7 +6,7 @@ const Error = () => {
   return (
     <>
       <section className=" grid place-items-center ">
-        <img src={PageNotFound} alt="Page not found" className="w-96 h-96  " />
+        <img src={PageNotFound} alt="Page not found" className="h-96 w-96  " />
         <div className=" space-y-4 text-center ">
           <h3 className=" text-2xl font-semibold ">Page Not Found</h3>
           <p className=" font-light ">

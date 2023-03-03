@@ -15,9 +15,9 @@ const CollectionProducts = ({ products, title }) => {
           return (
             <div
               key={id}
-              className=" flex flex-row space-x-5 pt-8 md:pt-4 group  "
+              className=" group flex flex-row space-x-5 pt-8 md:pt-4  "
             >
-              <ProductImage product={product} className="w-20 h-20 p-2 " />
+              <ProductImage product={product} className="h-20 w-20 p-2 " />
               <Product_title product={product} />
             </div>
           )

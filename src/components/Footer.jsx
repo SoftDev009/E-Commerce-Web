@@ -35,11 +35,11 @@
     const Footer = () => {
       return (
         <>
-          <footer className="bg-primary container mx-auto grid-cols-1 space-y-10 md:space-y-0 grid md:grid-cols-4 px-5 xl:px-28 text-white tracking-wider py-8 xl:py-20 md:mt-28 mt-28 ">
+          <footer className="container mx-auto mt-28 grid grid-cols-1 space-y-10 bg-primary px-5 py-8 tracking-wider text-white md:mt-28 md:grid-cols-4 md:space-y-0 xl:px-28 xl:py-20 ">
             {/* Shoptik */}
             <section className="space-y-4">
               <h1 className="text-4xl font-black tracking-wider">Shoptik.</h1>
-              <p className="text-sm w-2/3 font-light">
+              <p className="w-2/3 text-sm font-light">
                 Explore the various kind of products for your Home, office and
                 Room.
               </p>
@@ -49,24 +49,24 @@
             <section className="space-y-6">
               <div className="space-y-1">
                 <h4 className="uppercase ">Contact us</h4>
-                <div className="border-t w-1/6"></div>
+                <div className="w-1/6 border-t"></div>
               </div>
-              <div className="text-sm font-light space-y-4">
-                <p className="flex space-x-1 items-center">
+              <div className="space-y-4 text-sm font-light">
+                <p className="flex items-center space-x-1">
                   <span>
                     {" "}
                     <BsTelephone />{" "}
                   </span>
                   <span> (+88) 1234 567898</span>
                 </p>
-                <p className="flex space-x-1 items-center">
+                <p className="flex items-center space-x-1">
                   <span>
                     {" "}
                     <FiMail />{" "}
                   </span>
                   <span> shoptik@gmail.com</span>
                 </p>
-                <p className="flex space-x-1 items-center">
+                <p className="flex items-center space-x-1">
                   <span>
                     {" "}
                     <BsBuilding />{" "}
@@ -75,16 +75,16 @@
                 </p>
                 <div className="flex space-x-6">
                   <a href="#">
-                    <AiOutlineFacebook className="w-5 h-5" />
+                    <AiOutlineFacebook className="h-5 w-5" />
                   </a>
                   <a href="#">
-                    <AiFillTwitterSquare className="w-5 h-5" />
+                    <AiFillTwitterSquare className="h-5 w-5" />
                   </a>
                   <a href="#">
-                    <AiOutlineLinkedin className="w-5 h-5" />
+                    <AiOutlineLinkedin className="h-5 w-5" />
                   </a>
                   <a href="#">
-                    <AiOutlineInstagram className="w-5 h-5" />
+                    <AiOutlineInstagram className="h-5 w-5" />
                   </a>
                 </div>
               </div>
@@ -94,9 +94,9 @@
             <section className="space-y-6">
               <div className="space-y-1">
                 <h4 className="uppercase ">Userful links</h4>
-                <div className="border-t w-1/6"></div>
+                <div className="w-1/6 border-t"></div>
               </div>
-              <div className="space-y-4 flex flex-col font-light text-sm">
+              <div className="flex flex-col space-y-4 text-sm font-light">
                 <a href="#" className="hover:text-white/80">
                   About Shoptik
                 </a>
@@ -122,7 +122,7 @@
             <section className="space-y-6">
               <div className="space-y-1">
                 <h4 className="uppercase ">Latest news</h4>
-                <div className="border-t w-1/6"></div>
+                <div className="w-1/6 border-t"></div>
               </div>
               <div className="flex flex-col space-y-3 font-light ">
                 {blog_data.map((item) => {
@@ -130,12 +130,12 @@
                   return (
                     <article
                       key={id}
-                      className="flex lg:flex-row  md:flex-col md:items-start justify-start items-center space-x-4 xl:space-x-4 md:space-x-0 "
+                      className="flex items-center  justify-start space-x-4 md:flex-col md:items-start md:space-x-0 lg:flex-row xl:space-x-4 "
                     >
                       <img
                         src={image}
                         alt={title}
-                        className="w-20 h-12 object-cover object-center"
+                        className="h-12 w-20 object-cover object-center"
                       />
                       <div className=" capitalize ">
                         <a href="#" className="text-sm hover:text-white/80 ">

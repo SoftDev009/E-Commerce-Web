@@ -5,7 +5,7 @@ import AllProducts from './AllProducts'
 const ProductsHome = () => {
   return (
     <>
-      <section className="container mx-auto px-5 xl:px-28 flex my-10 gap-10 relative ">
+      <section className="container relative mx-auto my-10 flex gap-10 px-5 xl:px-28 ">
         <FiltersComponent />
         <AllProducts />
       </section>

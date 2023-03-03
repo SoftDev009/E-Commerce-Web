@@ -7,10 +7,10 @@ const Grid_view_products = ({ products }) => {
         {products.map((product) => {
           const { id } = product
           return (
-            <article key={id} className="space-y-2 group ">
+            <article key={id} className="group space-y-2 ">
               <ProductImage
                 product={product}
-                className="h-40 md:h-56 xl:h-72 p-4 md:p-4 xl:p-8"
+                className="h-40 p-4 md:h-56 md:p-4 xl:h-72 xl:p-8"
               />
               <Product_title
                 product={product}

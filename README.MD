@@ -29,9 +29,9 @@ For data storage, Airtable was used as a scalable and efficient database solutio
 **Data Storage:** Airtable
 
 **User Authentication:** Auth0
-## Demo
+## Live Project
 
-https://shoptik.netlify.app
+You can access the live version of the Shoptik eCommerce by following this link [Shoptik](https://shoptik.netlify.app)
 
 
 ## Screenshots
@@ -61,9 +61,15 @@ https://shoptik.netlify.app
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/en/main)
 - [React Icons](https://react-icons.github.io/react-icons)
+
+
+## Design Inspiration
+- [Behance](https://www.behance.net/gallery/85274215/Furniture-e-Commerce-Website-Landing-Page-Exploration)
+
 ## License
 Shoptik is licensed under the MIT License. See the LICENSE file for more information.
 [MIT](https://choosealicense.com/licenses/mit/)
+
 
 
 ## Feedback

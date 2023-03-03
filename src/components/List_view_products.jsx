@@ -6,19 +6,18 @@ const List_view_products = ({ products }) => {
     <>
       <section className=" grid grid-cols-1 gap-6">
         {products.map((product) => {
-          const { id, description } = product
+          const { id } = product
           return (
             <article
               key={id}
-              className=" grid grid-cols-2 md:grid-cols-3 w-full  gap-5 md:gap-10 group md:space-y-0  "
+              className=" group grid w-full grid-cols-2  gap-5 md:grid-cols-3 md:gap-10 md:space-y-0  "
             >
               <ProductImage
                 product={product}
-                className="h-40 md:h-60 md:w-72 lg:w-80 xl:w-96 p-4 xl:h-64 xl:p-8 "
+                className="h-40 p-4 md:h-60 md:w-72 lg:w-80 xl:h-64 xl:w-96 xl:p-8 "
               />
               <div className=" w-full space-y-4 md:col-span-2  ">
                 <Product_title product={product} className="w-full" />
-                {/* <p className="  md:mt-10"> {description} </p> */}
               </div>
             </article>
           )

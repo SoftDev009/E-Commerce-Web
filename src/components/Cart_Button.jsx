@@ -9,15 +9,15 @@ const Cart_Button = () => {
   const { total_items, clearCart } = useCartContext()
   return (
     <>
-      <div className="  space-x-8 flex  md:space-x-8">
+      <div className="  flex space-x-8  md:space-x-8">
         <Link
           title="Cart"
           to="/cart"
-          className="relative flex flex-row justify-center items-center "
+          className="relative flex flex-row items-center justify-center "
         >
           {" "}
           <BsCart2 className="relative ml-1 h-6 w-6 " />{" "}
-          <span className="absolute -top-2 -right-4 flex justify-center items-center bg-primary w-5 h-5 rounded-full shadow-md  text-white text-xs  ">
+          <span className="absolute -top-2 -right-4 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs  text-white shadow-md  ">
             {" "}
             {total_items}
           </span>

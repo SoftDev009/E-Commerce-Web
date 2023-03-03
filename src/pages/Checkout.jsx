@@ -4,7 +4,7 @@ import { Stripe_Checkout } from "../components"
 const Checkout = () => {
   return (
     <>
-      <section className=" container mx-auto  px-28 flex justify-center ">
+      <section className=" container mx-auto  flex justify-center px-28 ">
         <Stripe_Checkout />
       </section>
     </>

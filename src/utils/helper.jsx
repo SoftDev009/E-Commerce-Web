@@ -3,7 +3,6 @@ export const formatPrice = (number) => {
     style: "currency",
     currency: "INR",
   }).format(number)
-  // }).format(number / 100)
   return newNumber
 }
 

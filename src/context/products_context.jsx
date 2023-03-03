@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { useReducer } from "react"
 import reducer from "../reducers/products_reducer"
 import { products_url as url, single_product_url } from "../utils/constants"
+
 // Import actions variable
 import {
   SIDEBAR_OPEN,
