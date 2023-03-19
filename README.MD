@@ -68,7 +68,7 @@ You can access the live version of the Shoptik eCommerce by following this link 
 
 ## License
 Shoptik is licensed under the MIT License. See the LICENSE file for more information.
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
 
 
 
