@@ -89,7 +89,7 @@ Please let us know your thoughts on my app by sending any suggestions or feedbac
 
 
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://themodernmonk7.netlify.app)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://themodernmonk7.vercel.app)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/themodernmonk7)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/themodernmonk7)
 [![Peerlist](https://github-readme-badge.peerlist.io/api/themodernmonk7?style=social)](https://peerlist.io/themodernmonk7)
