@@ -48,7 +48,7 @@
             {/* Contact us */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h4 className="uppercase ">Contact us</h4>
+                <h3 className="uppercase ">Contact us</h3>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="space-y-4 text-sm font-light">
@@ -74,16 +74,16 @@
                   <span> 469, Hog Camp Road, California</span>
                 </p>
                 <div className="flex space-x-6">
-                  <a href="#">
+                  <a href="#" aria-label="Facebook">
                     <AiOutlineFacebook className="h-5 w-5" />
                   </a>
-                  <a href="#">
+                  <a href="#" aria-label="Twitter">
                     <AiFillTwitterSquare className="h-5 w-5" />
                   </a>
-                  <a href="#">
+                  <a href="#" aria-label="LinkedIn">
                     <AiOutlineLinkedin className="h-5 w-5" />
                   </a>
-                  <a href="#">
+                  <a href="#" aria-label="Instagram">
                     <AiOutlineInstagram className="h-5 w-5" />
                   </a>
                 </div>
@@ -93,7 +93,7 @@
             {/* Useful links */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h4 className="uppercase ">Userful links</h4>
+                <h3 className="uppercase ">Userful links</h3>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="flex flex-col space-y-4 text-sm font-light">
@@ -121,7 +121,7 @@
             {/* Latest section */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h4 className="uppercase ">Latest news</h4>
+                <h3 className="uppercase ">Latest news</h3>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="flex flex-col space-y-3 font-light ">
