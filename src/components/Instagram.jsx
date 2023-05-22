@@ -1,9 +1,9 @@
 import React from 'react'
-import Instagram1 from '../assets/instaGram1.jpg'
-import Instagram2 from '../assets/instaGram2.jpg'
-import Instagram3 from '../assets/instaGram3.jpg'
-import Instagram4 from '../assets/instaGram4.jpg'
-import Blog3 from '../assets/Blog3.jpg'
+import Instagram1 from "../assets/instaGram1.webp"
+import Instagram2 from "../assets/instaGram2.webp"
+import Instagram3 from "../assets/instaGram3.webp"
+import Instagram4 from "../assets/instaGram4.webp"
+import Blog3 from "../assets/Blog3.webp"
 
 const Instagram = () => {
   return (

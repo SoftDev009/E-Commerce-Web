@@ -1,6 +1,6 @@
 import React from 'react'
-import Light1 from '../assets/light1.png'
-import Light2 from '../assets/light2.png'
+import Light1 from "../assets/light1.webp"
+import Light2 from "../assets/light2.webp"
 import { View_button } from "../components"
 const Header = () => {
   return (

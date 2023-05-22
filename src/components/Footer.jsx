@@ -1,7 +1,7 @@
     import React from 'react'
-    import Blog_01 from "../assets/Blog1.jpg"
-    import Blog_02 from "../assets/Blog2.jpg"
-    import Blog_03 from "../assets/Blog3.jpg"
+    import Blog_01 from "../assets/Blog1.webp"
+    import Blog_02 from "../assets/Blog2.webp"
+    import Blog_03 from "../assets/Blog3.webp"
     import { BsTelephone, BsBuilding } from "react-icons/bs"
     import {
       AiOutlineFacebook,

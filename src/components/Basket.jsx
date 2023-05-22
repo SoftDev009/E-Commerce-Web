@@ -1,5 +1,5 @@
 import React from 'react'
-import BasketImage from '../assets/basketChair.png'
+import BasketImage from "../assets/basketChair.webp"
 import { View_button } from "../components"
 
 const Basket = () => {
