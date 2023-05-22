@@ -33,6 +33,8 @@ const Navbar = () => {
           <section className=" flex w-full items-center justify-between pt-5 pb-2 md:hidden  ">
             {/* Sidebar menu button */}
             <button
+              type="button"
+              aria-label="Open Sidebar"
               onClick={openSidebar}
               className=" border border-black p-1 hover:border-primary hover:bg-primary hover:text-white "
             >
