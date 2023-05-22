@@ -48,7 +48,7 @@
             {/* Contact us */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h3 className="uppercase ">Contact us</h3>
+                <h2 className="uppercase ">Contact us</h2>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="space-y-4 text-sm font-light">
@@ -93,7 +93,7 @@
             {/* Useful links */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h3 className="uppercase ">Userful links</h3>
+                <h2 className="uppercase ">Userful links</h2>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="flex flex-col space-y-4 text-sm font-light">
@@ -121,7 +121,7 @@
             {/* Latest section */}
             <section className="space-y-6">
               <div className="space-y-1">
-                <h3 className="uppercase ">Latest news</h3>
+                <h2 className="uppercase ">Latest news</h2>
                 <div className="w-1/6 border-t"></div>
               </div>
               <div className="flex flex-col space-y-3 font-light ">

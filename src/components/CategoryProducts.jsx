@@ -8,9 +8,9 @@ const CategoryProducts = ({ products, category_name }) => {
       <div className="grid grid-cols-1 gap-6 border-b py-8 md:grid-cols-2 lg:grid-cols-4">
         <article className="md:my-5 ">
           <div className="space-y-4 md:pt-10 ">
-            <h4 className="text-4xl capitalize tracking-wider ">
+            <h3 className="text-4xl capitalize tracking-wider ">
               {category_name}
-            </h4>
+            </h3>
             <p className="text-sm font-light tracking-wider text-gray-600  ">
               Small be and the rain would phase distance, succeed align.
             </p>
