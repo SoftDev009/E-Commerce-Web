@@ -36,19 +36,36 @@ export default defineConfig({
         ],
         theme_color: "#171717",
       },
-      // registerType: "autoUpdate",
+      registerType: "autoUpdate",
       devOptions: {
         enabled: true,
       },
       workbox: {
         runtimeCaching: [
           {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-fonts-cache",
+              expiration: {
+                maxEntries: 10, // Maximum 10 entries/files in the cache
+                maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
             urlPattern: ({ url }) => {
               return url.pathname.startsWith("/.netlify")
             },
-            handler: "CacheFirst",
+            handler: "StaleWhileRevalidate",
             options: {
               cacheName: "api-cache",
+              expiration: {
+                maxAgeSeconds: 2 * 60 * 60, // 2 hours
+              },
               cacheableResponse: {
                 statuses: [0, 200],
               },

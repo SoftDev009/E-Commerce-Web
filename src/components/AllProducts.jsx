@@ -5,7 +5,6 @@ import {
   Error,
   Grid_view_products,
   List_view_products,
-  NotFound,
 } from "../components"
 import { useFilterContext } from "../context/filter_context"
 
