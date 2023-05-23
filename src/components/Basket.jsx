@@ -8,8 +8,10 @@ const Basket = () => {
       <div className="space-y-2 ">
         {/* Mobile image */}
         <img
+          width={300}
+          height={200}
           src={BasketImage}
-          alt=""
+          alt="Basket chair"
           className="absolute bottom-5 right-0 h-40 w-40 object-cover  object-center md:h-60 md:w-64 lg:hidden "
         />
         <h2 className="w-2/3 font-light uppercase tracking-widest md:w-full md:text-2xl xl:text-4xl ">

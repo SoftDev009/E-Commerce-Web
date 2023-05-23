@@ -9,6 +9,8 @@ const Instagram = () => {
   return (
     <section className=" container relative mx-auto mt-20 hidden grid-cols-5 px-5 md:mt-28 md:grid xl:px-0 ">
       <img
+        width={300}
+        height={200}
         src={Instagram1}
         alt=""
         className="h-44 w-full object-cover object-center xl:h-72 xl:w-72"

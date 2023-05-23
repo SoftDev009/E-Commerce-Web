@@ -133,6 +133,8 @@
                       className="flex items-center  justify-start space-x-4 md:flex-col md:items-start md:space-x-0 lg:flex-row xl:space-x-4 "
                     >
                       <img
+                        width={300}
+                        height={200}
                         src={image}
                         alt={title}
                         className="h-12 w-20 object-cover object-center"
