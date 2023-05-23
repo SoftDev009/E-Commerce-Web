@@ -78,6 +78,7 @@ export default defineConfig({
             options: {
               cacheName: "api-cache",
               expiration: {
+                maxEntries: 10,
                 maxAgeSeconds: 2 * 60 * 60, // 2 hours
               },
               cacheableResponse: {
