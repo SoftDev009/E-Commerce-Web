@@ -51,13 +51,12 @@ const Sidebar_Filter = () => {
               className="text-sm capitalize text-primary"
               onClick={() => {
                 clearFilters()
-                setIsSidebarOpen(false)
+                closeSidebar()
               }}
             >
               Clear all
             </button>
           </div>
-
           {/* Search Product */}
           <div className="relative text-gray-500 focus-within:text-black">
             <input
@@ -70,7 +69,6 @@ const Sidebar_Filter = () => {
             />
             <BsSearch className=" pointer-events-none absolute top-3 right-0 mr-5 h-4 w-4 " />
           </div>
-
           {/* Categories */}
           <div className=" space-y-2 ">
             <h2 className=" font-medium capitalize tracking-wider">
@@ -93,7 +91,6 @@ const Sidebar_Filter = () => {
               )
             })}
           </div>
-
           {/* company / Brand */}
           <div className=" space-y-2 ">
             <h2 className=" font-medium capitalize tracking-wider">Brand</h2>
@@ -117,7 +114,6 @@ const Sidebar_Filter = () => {
               })}
             </select>
           </div>
-
           {/* Colors */}
           <div className=" space-y-2 ">
             <h2 className=" font-medium capitalize tracking-wider">Colors</h2>
@@ -158,7 +154,6 @@ const Sidebar_Filter = () => {
               })}
             </div>
           </div>
-
           {/* Price */}
           <div className="">
             <div className="flex justify-between">
@@ -180,7 +175,6 @@ const Sidebar_Filter = () => {
             />
             <p className="text-end"> {formatPrice(price)} </p>
           </div>
-
           {/* Shipping */}
           <div className="group flex items-center space-x-5 capitalize">
             <input
