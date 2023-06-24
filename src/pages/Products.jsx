@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
   Breadcrumb,
   Filters,
@@ -10,11 +10,19 @@ import {
 } from "../components"
 import { useFilterContext } from "../context/filter_context"
 import { useProductsContext } from "../context/products_context"
-
+import ReactGA from "react-ga4"
 const Products = () => {
   const { filtered_products: products } = useFilterContext()
   const { products_loading } = useProductsContext()
   if (products_loading) return <Loading />
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageView",
+      page: window.location.pathname,
+      title: "Shop page",
+    })
+  })
   return (
     <>
       <Breadcrumb title="products" />
