@@ -10,6 +10,7 @@ export default defineConfig({
       manifest: {
         name: "Shoptik",
         short_name: "Shoptik",
+        categories: ["shopping"],
         icons: [
           {
             src: "/android-chrome-192x192.png",
@@ -32,6 +33,15 @@ export default defineConfig({
             sizes: "192x192",
             type: "image/png",
             purpose: "any maskable",
+          },
+        ],
+        screenshots: [
+          {
+            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687240262/Yellow_White_Modern_Furniture_Ad_Facebook_Cover_qwvec5.png",
+            sizes: "800x600",
+            platform: "android",
+            label:
+              "Find beautifully crafted furniture for your home at Shoptik. Every piece is meticulously designed, adding beauty and functionality to your living spaces.",
           },
         ],
         theme_color: "#171717",

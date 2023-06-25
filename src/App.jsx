@@ -13,7 +13,9 @@ import {
   Services,
   News,
 } from "./pages"
-
+import ReactGA from "react-ga4"
+const measurementID = "G-Y1EV1Q38PH"
+ReactGA.initialize(measurementID)
 function App() {
   return (
     <BrowserRouter>
