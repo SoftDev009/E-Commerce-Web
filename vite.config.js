@@ -59,13 +59,6 @@ export default defineConfig({
             label:
               "Find beautifully crafted furniture for your home at Shoptik.",
           },
-          {
-            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669423/screenshot3_crmnwv.png",
-            sizes: "800x600",
-            platform: "android",
-            label:
-              "Find beautifully crafted furniture for your home at Shoptik.",
-          },
         ],
         theme_color: "#171717",
       },
