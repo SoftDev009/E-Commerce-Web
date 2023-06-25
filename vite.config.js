@@ -46,14 +46,14 @@ export default defineConfig({
               "Find beautifully crafted furniture for your home at Shoptik.",
           },
           {
-            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669423/screenshot1_ydu3vw.png",
+            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669422/screenshot2_se3fi3.png",
             sizes: "1200x800",
             platform: "android",
             label:
               "Find beautifully crafted furniture for your home at Shoptik.",
           },
           {
-            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669422/screenshot2_se3fi3.png",
+            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669423/screenshot3_crmnwv.png",
             sizes: "800x600",
             platform: "android",
             label:
