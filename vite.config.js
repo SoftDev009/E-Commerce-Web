@@ -10,6 +10,8 @@ export default defineConfig({
       manifest: {
         name: "Shoptik",
         short_name: "Shoptik",
+        description:
+          "Find beautifully crafted furniture for your home at Shoptik. Every piece is meticulously designed, adding beauty and functionality to your living spaces.",
         categories: ["shopping"],
         icons: [
           {
