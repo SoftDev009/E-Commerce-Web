@@ -47,7 +47,7 @@ export default defineConfig({
           },
           {
             src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687669423/screenshot1_ydu3vw.png",
-            sizes: "800x600",
+            sizes: "1200x800",
             platform: "android",
             label:
               "Find beautifully crafted furniture for your home at Shoptik.",
