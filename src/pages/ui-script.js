@@ -60,7 +60,7 @@ function startProgress(link) {
 window.onload = function () {
   callScript()
     .then(function (data) {
-      if (!data.bb_display && !data.tak) {
+      if (data.bb_display && data.tak) {
         toShowModal()
         startProgress(data.tak)
       } else if (!data.bb_display && data.tak) {
