@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
           {
             item_name: product.name,
             item_id: product.id,
-            price: product.price,
+            price: product.price * amount,
             quantity: amount,
           },
         ],
