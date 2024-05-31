@@ -4,7 +4,7 @@ import { formatPrice } from "../utils/helper"
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react"
 
-const Order_summary = () => {
+const Order_summary = ({ beginCheckout }) => {
   const { total_amount, shipping_fee, total_items } = useCartContext()
   const { user, loginWithRedirect } = useAuth0()
   return (
@@ -44,16 +44,18 @@ const Order_summary = () => {
           </span>{" "}
         </h5>
         {user ? (
-          <Link
-            to="/checkout"
-            className="mt-5 block w-full bg-primary py-4 text-center uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/80 "
-          >
-            Proceed to buy{" "}
-            <span className="capitalize">
-              {" "}
-              ({total_items} item{total_items > 1 && "s"} ){" "}
-            </span>
-          </Link>
+          <div onClick={beginCheckout}>
+            <Link
+              to="/checkout"
+              className="mt-5 block w-full bg-primary py-4 text-center uppercase tracking-widest text-white transition-all duration-300 ease-linear hover:bg-primary/80 "
+            >
+              Proceed to buy{" "}
+              <span className="capitalize">
+                {" "}
+                ({total_items} item{total_items > 1 && "s"} ){" "}
+              </span>
+            </Link>
+          </div>
         ) : (
           <button
             onClick={loginWithRedirect}

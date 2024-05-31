@@ -31,6 +31,22 @@ export const CartProvider = ({ children }) => {
   //   Add to Cart
   const addToCart = (id, color, amount, product) => {
     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } })
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "INR",
+        value: amount * product.price,
+        items: [
+          {
+            item_name: product.name,
+            item_id: product.id,
+            price: product.price,
+            quantity: amount,
+          },
+        ],
+      },
+    })
   }
 
   // Remove item
