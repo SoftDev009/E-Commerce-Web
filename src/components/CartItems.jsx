@@ -21,7 +21,6 @@ const CartItems = () => {
         })),
       },
     })
-    console.log(window.dataLayer)
   }
 
   return (
