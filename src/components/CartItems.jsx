@@ -4,17 +4,36 @@ import { useCartContext } from "../context/cart_context"
 import { formatPrice } from "../utils/helper"
 import { Order_summary, ProductImage } from "../components"
 const CartItems = () => {
-  const { cart, removeItem, toggleAmount } = useCartContext()
+  const { cart, removeItem, toggleAmount, total_amount } = useCartContext()
+
+  const beginCheckout = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "begin_checkout",
+      ecommerce: {
+        currency: "INR",
+        value: total_amount,
+        items: cart.map((item) => ({
+          item_name: item.name,
+          item_id: item.id,
+          price: item.price * item.amount,
+          quantity: item.amount,
+        })),
+      },
+    })
+    console.log(window.dataLayer)
+  }
+
   return (
-    <section className="container mx-auto mt-20 px-5 xl:px-28 flex flex-col lg:flex-row gap-28 xl:gap-28 lg:gap-10 justify-between md:items-center lg:items-start ">
+    <section className="container mx-auto mt-20 flex flex-col justify-between gap-28 px-5 md:items-center lg:flex-row lg:items-start lg:gap-10 xl:gap-28 xl:px-28 ">
       {/* Right */}
       <div className="md:w-full  ">
-        <h4 className="font-medium text-xl flex items-center py-2 capitalize tracking-widest ">
+        <h4 className="flex items-center py-2 text-xl font-medium capitalize tracking-widest ">
           shopping Cart
         </h4>
         <hr />
         {/* Headers */}
-        <div className="  grid-cols-5 hidden md:grid text-sm tracking-widest mt-10    text-gray-500 uppercase">
+        <div className="  mt-10 hidden grid-cols-5 text-sm uppercase tracking-widest    text-gray-500 md:grid">
           <h4 className="col-span-2">Product details </h4>
           <p className="text-center">Quantity</p>
           <p className="text-right">Price</p>
@@ -124,7 +143,7 @@ const CartItems = () => {
       </div>
       {/* Left */}
       {/* Order summary */}
-      <Order_summary />
+      <Order_summary beginCheckout={beginCheckout} />
     </section>
   )
 }
