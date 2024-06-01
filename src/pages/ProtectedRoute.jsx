@@ -3,9 +3,10 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useAuth0()
+  const { user, isLoading } = useAuth0()
+  if (isLoading) return <div>Loading...</div>
   if (!user) {
-    return <Navigate to="/" /> 
+    return <Navigate to="/" />
   }
   return children
 }
