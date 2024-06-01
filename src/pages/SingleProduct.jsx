@@ -26,6 +26,21 @@ const SingleProduct = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
     window.scrollTo(0, 0)
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "view_item",
+      ecommerce: {
+        currency: "INR",
+        value: product?.price,
+        items: [
+          {
+            item_name: product?.name,
+            item_id: product?.id,
+            price: product?.price,
+          },
+        ],
+      },
+    })
   }, [id])
 
   if (loading) return <Loading />
