@@ -1,19 +1,35 @@
 import React, { useEffect } from "react"
 import { BsFillCheckCircleFill, BsArrowRight } from "react-icons/bs"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import { useCartContext } from "../context/cart_context"
 
 const Completion = () => {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const paymentIntent = searchParams.get("payment_intent")
+  const { clearCart } = useCartContext()
+
   useEffect(() => {
-    setTimeout(() => {
+    const timeId = setTimeout(() => {
+      clearCart()
       navigate("/")
-    }, 20000)
+    }, 10000)
+    return () => {
+      clearTimeout(timeId)
+    }
   }, [])
+
+  useEffect(() => {
+    if (!paymentIntent) {
+      navigate("/")
+      return
+    }
+  }, [paymentIntent])
 
   return (
     <section className=" container mx-auto my-20 grid place-items-center px-5 md:px-28">
       <p className=" mb-2 font-light text-gray-600 ">
-        Redirecting to Homepage in 25s{" "}
+        Redirecting to Homepage in 10s
       </p>
       <article className=" rounded bg-gray-100 py-10 px-5 text-center md:p-16">
         <div className=" flex flex-col items-center justify-center space-y-4 ">
