@@ -10,22 +10,6 @@ const Completion = () => {
   const { cart, total_amount, clearCart } = useCartContext()
 
   useEffect(() => {
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      event: "purchase",
-      ecommerce: {
-        transaction_id: paymentIntent,
-        currency: "INR",
-        value: total_amount,
-        items: cart.map((item) => ({
-          item_name: item.name,
-          item_id: item.id,
-          price: item.price * item.amount,
-          quantity: item.amount,
-        })),
-      },
-    })
-
     const timeId = setTimeout(() => {
       clearCart()
       navigate("/")
@@ -39,6 +23,23 @@ const Completion = () => {
     if (!paymentIntent) {
       navigate("/")
       return
+    }
+    if (paymentIntent) {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: "purchase",
+        ecommerce: {
+          transaction_id: paymentIntent,
+          currency: "INR",
+          value: total_amount,
+          items: cart.map((item) => ({
+            item_name: item.name,
+            item_id: item.id,
+            price: item.price * item.amount,
+            quantity: item.amount,
+          })),
+        },
+      })
     }
   }, [paymentIntent])
 
