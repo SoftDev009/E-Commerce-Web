@@ -25,6 +25,7 @@ const Completion = () => {
       return
     }
     if (paymentIntent) {
+      clearCart()
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({
         event: "purchase",
