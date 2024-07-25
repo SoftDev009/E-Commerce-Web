@@ -5,9 +5,8 @@ import Stripe from "stripe"
 const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY)
 
 exports.handler = async (event, context) => {
-  const { cart, shipping_fee, total_amount } = JSON.parse(event.body)
+  const { shipping_fee, total_amount } = JSON.parse(event.body)
   const calculateOrderAmount = () => {
-    // Replace this constant with a calculation of the order's amount
     // Calculate the order total on the server to prevent
     // people from directly manipulating the amount on the client
     return (shipping_fee + total_amount) * 100
@@ -17,7 +16,19 @@ exports.handler = async (event, context) => {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: calculateOrderAmount(),
       currency: "INR",
+      description: "product name",
+      shipping: {
+        name: "user name",
+        address: {
+          line1: "510 Townsend St",
+          postal_code: "98140",
+          city: "San Francisco",
+          state: "CA",
+          country: "US",
+        },
+      },
     })
+
     return {
       statusCode: 200,
       body: JSON.stringify({ clientSecret: paymentIntent.client_secret }),
