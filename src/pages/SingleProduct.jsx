@@ -25,7 +25,6 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
-    console.log(product)
     window.scrollTo(0, 0)
   }, [id])
 
