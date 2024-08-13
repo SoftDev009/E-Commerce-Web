@@ -92,7 +92,16 @@ const Footer = () => {
                 }
                 className=""
               >
-                Test
+                Test A
+              </button>
+              <button
+                onClick={() =>
+                  (window.location.href =
+                    "com.libas.libas://www.libas.in/products/grey-yoke-design-silk-blend-straight-kurta-with-trousers-dupatta-35175?utm_content=oia&oia_redirect=true")
+                }
+                className=""
+              >
+                Test I
               </button>
             </div>
           </div>
