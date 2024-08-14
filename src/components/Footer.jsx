@@ -85,24 +85,6 @@ const Footer = () => {
               <a href="#" aria-label="Instagram">
                 <AiOutlineInstagram className="h-5 w-5" />
               </a>
-              <button
-                onClick={() =>
-                  (window.location.href =
-                    "intent://www.libas.in/?utm_content=oia&oia_redirect=true&utm_sessionId=123#Intent;scheme=http;action=android.intent.action.VIEW;end;")
-                }
-                className=""
-              >
-                Test A
-              </button>
-              <button
-                onClick={() =>
-                  (window.location.href =
-                    "com.libas.libas://www.libas.in/products/grey-yoke-design-silk-blend-straight-kurta-with-trousers-dupatta-35175?utm_content=oia&oia_redirect=true")
-                }
-                className=""
-              >
-                Test I
-              </button>
             </div>
           </div>
         </section>
