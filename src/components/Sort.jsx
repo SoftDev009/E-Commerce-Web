@@ -1,7 +1,7 @@
 import React from "react"
 import { BsFillGrid3X3GapFill } from "react-icons/bs"
 import { FaThList } from "react-icons/fa"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 
 const Sort = () => {
   const {

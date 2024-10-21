@@ -1,6 +1,6 @@
 import React from "react"
 import { BiMinus, BiPlus } from "react-icons/bi"
-import { useCartContext } from "../context/cart_context"
+import { useCartContext } from "../context/cart/cart_context"
 import { formatPrice } from "../utils/helper"
 import { Order_summary, ProductImage } from "../components"
 const CartItems = () => {

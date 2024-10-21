@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react"
 import { BsCart2, BsPersonPlus, BsPersonDash } from "react-icons/bs"
 import { Link } from "react-router-dom"
-import { useCartContext } from "../context/cart_context"
+import { useCartContext } from "../context/cart/cart_context"
 
 const Cart_Button = () => {
   const { user, loginWithRedirect, logout } = useAuth0()

@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { useReducer } from "react"
-import reducer from "../reducers/products_reducer"
-import { products_url as url, single_product_url } from "../utils/constants"
+import reducer from "../../reducers/product/products_reducer"
+import { products_url as url, single_product_url } from "../../utils/constants"
 
 // Import actions variable
 import {
@@ -13,7 +13,7 @@ import {
   GET_SINGLE_PRODUCT_BEGIN,
   GET_SINGLE_PRODUCT_ERROR,
   GET_SINGLE_PRODUCT_SUCCESS,
-} from "../actions"
+} from "../../actions/actions"
 import axios from "axios"
 import { useEffect } from "react"
 

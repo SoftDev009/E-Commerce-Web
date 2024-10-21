@@ -7,7 +7,7 @@ import {
   SORT_PRODUCTS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
-} from "../actions"
+} from "../../actions/actions"
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
@@ -115,7 +115,7 @@ const filter_reducer = (state, action) => {
       },
     }
   }
-  
+
   throw new Error(`No matching "${action.type}" - action type `)
 }
 

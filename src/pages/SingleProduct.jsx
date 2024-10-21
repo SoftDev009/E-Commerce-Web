@@ -1,5 +1,5 @@
 import React from "react"
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 import { single_product_url as url } from "../utils/constants"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"

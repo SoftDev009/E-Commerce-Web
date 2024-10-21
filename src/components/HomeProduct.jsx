@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 import { Loading, Error, ProductImage, Product_title } from "../components"
 import { getUniqueValues } from "../utils/helper"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 import ReactGA from "react-ga4"
 const HomeProduct = () => {
   const { products_loading, products_error } = useProductsContext()

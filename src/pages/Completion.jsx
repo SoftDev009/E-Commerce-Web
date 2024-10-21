@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { BsFillCheckCircleFill, BsArrowRight } from "react-icons/bs"
 import { Link, useNavigate, useSearchParams } from "react-router-dom"
-import { useCartContext } from "../context/cart_context"
+import { useCartContext } from "../context/cart/cart_context"
 
 const Completion = () => {
   const navigate = useNavigate()
