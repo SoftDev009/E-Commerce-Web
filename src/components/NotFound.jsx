@@ -1,6 +1,6 @@
 import React from "react"
 import NotFoundProduct from "../assets/undraw_search_engine.svg"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 const NotFound = () => {
   const {
     filters: { text },

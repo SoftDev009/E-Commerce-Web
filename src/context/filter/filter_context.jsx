@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 import { useContext } from "react"
 import { createContext } from "react"
-import reducer from "../reducers/filter_reducer"
+import reducer from "../../reducers/filter/filter_reducer"
 import {
   LOAD_PRODUCTS,
   SET_GRID_VIEW,
@@ -11,8 +11,8 @@ import {
   SORT_PRODUCTS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
-} from "../actions"
-import { useProductsContext } from "./products_context"
+} from "../../actions/actions"
+import { useProductsContext } from "../product/products_context"
 import { useEffect } from "react"
 const initialState = {
   filtered_products: [],

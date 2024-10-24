@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
-import { useCartContext } from "../context/cart_context"
+import { useCartContext } from "../context/cart/cart_context"
 import CardStyle from "../app.css"
 import axios from "axios"
 import { Elements } from "@stripe/react-stripe-js"

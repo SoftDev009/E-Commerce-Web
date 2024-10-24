@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FaFilter, FaChevronRight } from "react-icons/fa"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 import { BsSearch, BsCheck } from "react-icons/bs"
 import { formatPrice, getUniqueValues } from "../utils/helper"
 const Sidebar_Filter = () => {

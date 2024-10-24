@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react"
 
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 import { Loading } from "../components"
 
 const HomeProduct = lazy(() => import("../components/HomeProduct"))

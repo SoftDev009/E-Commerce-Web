@@ -1,5 +1,5 @@
 import React from "react"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 import { formatPrice, getUniqueValues } from "../utils/helper"
 import { BsSearch, BsCheck } from "react-icons/bs"
 

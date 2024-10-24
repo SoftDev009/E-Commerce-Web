@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
 import { BsX } from "react-icons/bs"
 import { Logo } from "../components"
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 
 const Sidebar = () => {
   const { closeSidebar } = useProductsContext()

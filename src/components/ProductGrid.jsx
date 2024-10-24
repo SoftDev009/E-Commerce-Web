@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import { CollectionProducts } from "../components"
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 
 const ProductGrid = () => {
   const { featured_products, newArrival_products, bestSeller_products } =

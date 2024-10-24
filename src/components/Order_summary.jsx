@@ -1,5 +1,5 @@
 import React from "react"
-import { useCartContext } from "../context/cart_context"
+import { useCartContext } from "../context/cart/cart_context"
 import { formatPrice } from "../utils/helper"
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react"

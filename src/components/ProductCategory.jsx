@@ -1,5 +1,5 @@
-import React from 'react'
-import { useProductsContext } from "../context/products_context"
+import React from "react"
+import { useProductsContext } from "../context/product/products_context"
 import { CategoryProducts } from "../components"
 const ProductCategory = () => {
   const { products } = useProductsContext()
@@ -14,7 +14,7 @@ const ProductCategory = () => {
   return (
     <>
       <section className=" mt-20 md:mt-28">
-        <div className="container mx-auto px-5 xl:px-28 py-2">
+        <div className="container mx-auto px-5 py-2 xl:px-28">
           <CategoryProducts
             products={all_Decoration_products}
             category_name="decoration"

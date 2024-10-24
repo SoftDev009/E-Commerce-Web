@@ -1,12 +1,12 @@
 import React from "react"
-import { useProductsContext } from "../context/products_context"
+import { useProductsContext } from "../context/product/products_context"
 import {
   Loading,
   Error,
   Grid_view_products,
   List_view_products,
 } from "../components"
-import { useFilterContext } from "../context/filter_context"
+import { useFilterContext } from "../context/filter/filter_context"
 
 const AllProducts = () => {
   const { products_loading, products_error } = useProductsContext()
